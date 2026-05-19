@@ -1,1419 +1,913 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Arcovra | Orchard Protection Systems Australia</title>
-
-  <meta
-    name="description"
-    content="Arcovra develops orchard protection systems for Australian fruit growers, including bird netting, hail protection, insect exclusion and weather protection systems."
-  />
-
-  <style>
-    :root {
-      --forest: #0f3d24;
-      --deep: #082b19;
-      --green: #1f6b3b;
-      --leaf: #74a944;
-      --gold: #bd8a17;
-      --gold-light: #e2c16b;
-      --cream: #f6f1e5;
-      --cream2: #fffdf7;
-      --white: #ffffff;
-      --charcoal: #202a25;
-      --muted: #68736d;
-      --line: #e5dac0;
-      --post: #242b29;
-      --shadow: 0 22px 55px rgba(23, 40, 30, 0.13);
-      --radius: 28px;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--cream);
-      color: var(--charcoal);
-      line-height: 1.55;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .container {
-      width: min(1180px, calc(100% - 36px));
-      margin: 0 auto;
-    }
-
-    .mini {
-      color: var(--gold);
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      font-weight: 900;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 46px;
-      padding: 0 22px;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      font-weight: 850;
-      cursor: pointer;
-      transition: 0.2s ease;
-      white-space: nowrap;
-    }
-
-    .btn:hover {
-      transform: translateY(-1px);
-    }
-
-    .btn-green {
-      background: var(--forest);
-      color: white;
-      box-shadow: 0 14px 28px rgba(15, 61, 36, 0.22);
-    }
-
-    .btn-gold {
-      background: var(--gold);
-      color: white;
-      box-shadow: 0 14px 28px rgba(189, 138, 23, 0.24);
-    }
-
-    .btn-outline {
-      background: rgba(255, 255, 255, 0.7);
-      border-color: var(--line);
-      color: var(--forest);
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(246, 241, 229, 0.92);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(15, 61, 36, 0.08);
-    }
-
-    .nav {
-      height: 76px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: var(--forest);
-      font-weight: 900;
-      letter-spacing: 0.11em;
-    }
-
-    .brand-mark {
-      width: 42px;
-      height: 42px;
-      border-radius: 14px;
-      background:
-        linear-gradient(135deg, var(--forest), var(--green));
-      display: grid;
-      place-items: center;
-      color: var(--gold-light);
-      box-shadow: 0 12px 26px rgba(15, 61, 36, 0.2);
-      font-size: 1.05rem;
-    }
-
-    .brand small {
-      display: block;
-      margin-top: -4px;
-      color: var(--muted);
-      font-size: 0.54rem;
-      letter-spacing: 0.22em;
-      font-weight: 850;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 23px;
-      font-size: 0.92rem;
-      font-weight: 760;
-      color: var(--charcoal);
-    }
-
-    .nav-links a:hover {
-      color: var(--green);
-    }
-
-    /* HERO */
-
-    .hero {
-      background: linear-gradient(180deg, var(--cream2), var(--cream));
-      padding: 58px 0 0;
-      overflow: hidden;
-    }
-
-    .hero-copy {
-      text-align: center;
-      max-width: 900px;
-      margin: 0 auto 32px;
-    }
-
-    h1 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(3rem, 7vw, 6.1rem);
-      line-height: 0.94;
-      letter-spacing: -0.055em;
-      color: var(--forest);
-      margin: 14px 0 18px;
-    }
-
-    .hero-copy p {
-      max-width: 735px;
-      margin: 0 auto 28px;
-      color: var(--muted);
-      font-size: 1.13rem;
-    }
-
-    .hero-actions {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .hero-visual {
-      position: relative;
-      height: 430px;
-      margin-top: 34px;
-      overflow: hidden;
-      border-radius: 38px 38px 0 0;
-      box-shadow: var(--shadow);
-      background:
-        linear-gradient(180deg, #dce8dc 0%, #edf2e5 38%, #87a66c 39%, #244b29 100%);
-    }
-
-    /*
-      Replace this visual later with a real or AI-generated orchard image.
-
-      Suggested file:
-      /images/commercial-orchard-netting-hero.jpg
-
-      Ideal image:
-      - commercial orchard rows
-      - large-span netting
-      - black/grey posts
-      - wide drive aisle
-      - professional agricultural look
-    */
-
-    .mountains {
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(140deg, transparent 0 42%, rgba(42, 68, 80, 0.19) 43% 54%, transparent 55%),
-        linear-gradient(35deg, transparent 0 50%, rgba(42, 68, 80, 0.18) 51% 62%, transparent 63%);
-      opacity: 0.8;
-    }
-
-    .canopy {
-      position: absolute;
-      left: -7%;
-      right: -7%;
-      top: 52px;
-      height: 265px;
-      border-top: 3px solid rgba(189, 138, 23, 0.75);
-      border-radius: 50% 50% 0 0;
-      background: linear-gradient(180deg, rgba(255,255,255,0.72), rgba(255,255,255,0.16));
-      clip-path: polygon(0 33%, 50% 65%, 100% 33%, 100% 100%, 0 100%);
-    }
-
-    .canopy::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(25deg, transparent 48%, rgba(255,255,255,0.55) 49%, rgba(255,255,255,0.55) 51%, transparent 52%),
-        linear-gradient(-25deg, transparent 48%, rgba(255,255,255,0.42) 49%, rgba(255,255,255,0.42) 51%, transparent 52%);
-      background-size: 55px 55px;
-      opacity: 0.48;
-    }
-
-    .rows {
-      position: absolute;
-      inset: 170px 0 0;
-      background:
-        repeating-linear-gradient(100deg, rgba(255,255,255,0.14) 0 2px, transparent 2px 62px),
-        repeating-linear-gradient(80deg, rgba(255,255,255,0.14) 0 2px, transparent 2px 62px);
-    }
-
-    .post {
-      position: absolute;
-      bottom: 0;
-      width: 10px;
-      background: var(--post);
-      border-radius: 8px 8px 0 0;
-      box-shadow: 0 8px 18px rgba(0,0,0,0.22);
-    }
-
-    .p1 { left: 12%; height: 260px; }
-    .p2 { left: 30%; height: 220px; }
-    .p3 { left: 50%; height: 205px; }
-    .p4 { right: 30%; height: 220px; }
-    .p5 { right: 12%; height: 260px; }
-
-    .hero-badge {
-      position: absolute;
-      left: 7%;
-      top: 72px;
-      width: 122px;
-      height: 122px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.88);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-      display: grid;
-      place-items: center;
-      text-align: center;
-      color: var(--forest);
-      font-weight: 900;
-      line-height: 1.05;
-      font-size: 0.92rem;
-    }
-
-    .fruit-stack {
-      position: absolute;
-      right: 7%;
-      top: 32px;
-      display: grid;
-      gap: 10px;
-    }
-
-    .fruit-bubble {
-      width: 68px;
-      height: 68px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: white;
-      border: 1px solid rgba(227, 217, 193, 0.7);
-      box-shadow: 0 14px 34px rgba(33, 43, 39, 0.15);
-      font-size: 31px;
-    }
-
-    /* FEATURE BAR */
-
-    .feature-bar {
-      position: relative;
-      z-index: 4;
-      transform: translateY(-34px);
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      background: rgba(255,255,255,0.96);
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-    }
-
-    .feature {
-      padding: 20px 24px;
-      display: flex;
-      gap: 14px;
-      align-items: center;
-      border-right: 1px solid var(--line);
-    }
-
-    .feature:last-child {
-      border-right: 0;
-    }
-
-    .feature-icon {
-      width: 38px;
-      height: 38px;
-      border-radius: 14px;
-      background: rgba(31, 107, 59, 0.1);
-      display: grid;
-      place-items: center;
-      color: var(--forest);
-      font-weight: 900;
-    }
-
-    .feature strong {
-      display: block;
-      color: var(--forest);
-      line-height: 1.1;
-    }
-
-    .feature span {
-      display: block;
-      color: var(--muted);
-      font-size: 0.85rem;
-      margin-top: 4px;
-    }
-
-    /* SECTIONS */
-
-    section {
-      padding: 80px 0;
-    }
-
-    h2 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(2.2rem, 4vw, 4rem);
-      line-height: 1;
-      letter-spacing: -0.04em;
-      color: var(--charcoal);
-      margin: 10px 0 18px;
-    }
-
-    .section-head {
-      max-width: 760px;
-      margin-bottom: 34px;
-    }
-
-    .section-head p {
-      color: var(--muted);
-      font-size: 1.05rem;
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 34px;
-      align-items: start;
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .grid-4 {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-    }
-
-    .card {
-      background: rgba(255,255,255,0.8);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 26px;
-      box-shadow: 0 14px 34px rgba(33, 43, 39, 0.06);
-    }
-
-    .card h3 {
-      color: var(--forest);
-      font-size: 1.18rem;
-      margin-bottom: 8px;
-      letter-spacing: -0.02em;
-    }
-
-    .card p,
-    .card li {
-      color: var(--muted);
-      font-size: 0.96rem;
-    }
-
-    .card ul {
-      display: grid;
-      gap: 6px;
-      padding-left: 18px;
-      margin-top: 10px;
-    }
-
-    .card-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 18px;
-      background: rgba(31,107,59,0.1);
-      display: grid;
-      place-items: center;
-      margin-bottom: 16px;
-      font-size: 1.4rem;
-    }
-
-    .image-slot {
-      min-height: 365px;
-      border-radius: 32px;
-      background:
-        linear-gradient(135deg, rgba(255,255,255,0.25), rgba(31,107,59,0.18)),
-        repeating-linear-gradient(86deg, transparent 0 48px, rgba(16,61,34,0.15) 49px 51px, transparent 52px 96px),
-        linear-gradient(180deg, #dfe9d7, #93b06f 45%, #294f2e);
-      border: 1px solid rgba(16,61,34,0.16);
-      padding: 26px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-    }
-
-    .image-slot span {
-      width: fit-content;
-      max-width: 100%;
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: rgba(16,61,34,0.92);
-      color: white;
-      font-weight: 850;
-      font-size: 0.88rem;
-    }
-
-    .image-slot p {
-      margin-top: 10px;
-      max-width: 540px;
-      background: rgba(255,255,255,0.78);
-      color: #284235;
-      border-radius: 16px;
-      padding: 12px 14px;
-      font-size: 0.92rem;
-    }
-
-    .dark {
-      background: var(--forest);
-      color: white;
-    }
-
-    .dark h2,
-    .dark h3 {
-      color: white;
-    }
-
-    .dark p,
-    .dark li {
-      color: rgba(255,255,255,0.76);
-    }
-
-    .dark .mini {
-      color: #e6ce86;
-    }
-
-    .dark .card {
-      background: rgba(255,255,255,0.08);
-      border-color: rgba(255,255,255,0.14);
-      box-shadow: none;
-    }
-
-    /* SYSTEMS */
-
-    .system-card {
-      padding: 0;
-      overflow: hidden;
-    }
-
-    .system-image {
-      height: 160px;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.42), rgba(16,61,34,0.28)),
-        repeating-linear-gradient(92deg, transparent 0 42px, rgba(255,255,255,0.45) 43px 45px, transparent 46px 82px),
-        linear-gradient(180deg, #dfe9d7, #8eaa6b 52%, #214f2a);
-      border-bottom: 1px solid var(--line);
-      position: relative;
-    }
-
-    .system-image::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 14%;
-      width: 8px;
-      height: 110px;
-      background: var(--post);
-      box-shadow:
-        180px -16px 0 var(--post),
-        360px -6px 0 var(--post);
-      border-radius: 6px 6px 0 0;
-    }
-
-    .system-content {
-      padding: 24px;
-    }
-
-    .system-content .tag {
-      display: inline-block;
-      margin-bottom: 10px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: rgba(31,107,59,0.1);
-      color: var(--forest);
-      font-size: 0.78rem;
-      font-weight: 850;
-    }
-
-    /* TABLE */
-
-    .table-wrap {
-      overflow-x: auto;
-      border-radius: 24px;
-      border: 1px solid var(--line);
-      background: white;
-    }
-
-    table {
-      width: 100%;
-      min-width: 900px;
-      border-collapse: collapse;
-    }
-
-    th,
-    td {
-      padding: 16px;
-      text-align: left;
-      vertical-align: top;
-      border-bottom: 1px solid var(--line);
-    }
-
-    th {
-      background: #fbf8ef;
-      color: var(--forest);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-size: 0.78rem;
-    }
-
-    td {
-      color: var(--muted);
-      font-size: 0.94rem;
-    }
-
-    td strong {
-      color: var(--charcoal);
-    }
-
-    /* PILOT */
-
-    .pilot {
-      background:
-        linear-gradient(135deg, rgba(16,61,34,0.96), rgba(31,107,59,0.92)),
-        radial-gradient(circle at top right, rgba(189,138,23,0.35), transparent 40%);
-      color: white;
-      border-radius: 36px;
-      padding: 40px;
-      display: grid;
-      grid-template-columns: 0.85fr 1.15fr;
-      gap: 32px;
-      box-shadow: var(--shadow);
-    }
-
-    .pilot h2 {
-      color: white;
-    }
-
-    .pilot p,
-    .pilot li {
-      color: rgba(255,255,255,0.78);
-    }
-
-    .pilot ul {
-      padding-left: 20px;
-      margin-top: 22px;
-      display: grid;
-      gap: 8px;
-    }
-
-    .pilot-note {
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.18);
-      border-radius: 22px;
-      padding: 22px;
-    }
-
-    .pilot-note strong {
-      display: block;
-      color: white;
-      margin-bottom: 8px;
-    }
-
-    /* CROPS */
-
-    .crop-strip {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      overflow: hidden;
-      background: white;
-      margin-top: 26px;
-    }
-
-    .crop-pill {
-      padding: 18px 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-      border-right: 1px solid var(--line);
-      color: var(--forest);
-      font-weight: 850;
-    }
-
-    .crop-pill:last-child {
-      border-right: 0;
-    }
-
-    .dot {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      display: inline-block;
-    }
-
-    .orange { background: #e88a1a; }
-    .cherry { background: #b8202f; }
-    .apple { background: #7ab648; }
-    .berry { background: #255fa8; }
-    .stone { background: #d66d3c; }
-    .grape { background: #7047a8; }
-
-    /* PROCESS */
-
-    .process {
-      counter-reset: step;
-      display: grid;
-      gap: 14px;
-    }
-
-    .step {
-      counter-increment: step;
-      display: grid;
-      grid-template-columns: 70px 1fr;
-      gap: 20px;
-      align-items: start;
-      padding: 24px;
-      background: rgba(255,255,255,0.78);
-      border: 1px solid var(--line);
-      border-radius: 22px;
-    }
-
-    .step::before {
-      content: counter(step, decimal-leading-zero);
-      width: 54px;
-      height: 54px;
-      border-radius: 18px;
-      background: var(--forest);
-      color: white;
-      display: grid;
-      place-items: center;
-      font-weight: 900;
-    }
-
-    .step h3 {
-      color: var(--forest);
-      margin-bottom: 4px;
-    }
-
-    .step p {
-      color: var(--muted);
-    }
-
-    /* CONTACT */
-
-    .contact {
-      padding: 60px 0 80px;
-    }
-
-    .contact-panel {
-      display: grid;
-      grid-template-columns: 0.85fr 1.15fr;
-      gap: 30px;
-      background: var(--forest);
-      color: white;
-      border-radius: 36px;
-      padding: 38px;
-      box-shadow: var(--shadow);
-    }
-
-    .contact-panel h2 {
-      color: white;
-    }
-
-    .contact-panel p,
-    .contact-panel li {
-      color: rgba(255,255,255,0.76);
-    }
-
-    .contact-panel ul {
-      padding-left: 20px;
-      display: grid;
-      gap: 8px;
-      margin-top: 22px;
-    }
-
-    form {
-      display: grid;
-      gap: 12px;
-    }
-
-    .form-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-
-    input,
-    select,
-    textarea {
-      width: 100%;
-      border: 1px solid rgba(255,255,255,0.18);
-      background: rgba(255,255,255,0.08);
-      color: white;
-      border-radius: 14px;
-      padding: 13px 14px;
-      font: inherit;
-      outline: none;
-    }
-
-    input::placeholder,
-    textarea::placeholder {
-      color: rgba(255,255,255,0.62);
-    }
-
-    select {
-      color: rgba(255,255,255,0.82);
-    }
-
-    option {
-      color: var(--charcoal);
-    }
-
-    textarea {
-      min-height: 118px;
-      resize: vertical;
-    }
-
-    footer {
-      padding: 36px 0;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .footer-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    /* RESPONSIVE */
-
-    @media (max-width: 980px) {
-      .nav-links {
-        display: none;
-      }
-
-      .features,
-      .grid-2,
-      .grid-3,
-      .grid-4,
-      .pilot,
-      .contact-panel {
-        grid-template-columns: 1fr;
-      }
-
-      .feature {
-        border-right: 0;
-        border-bottom: 1px solid var(--line);
-      }
-
-      .feature:last-child {
-        border-bottom: 0;
-      }
-
-      .fruit-stack {
-        display: none;
-      }
-
-      .crop-strip {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 580px) {
-      .container {
-        width: min(100% - 26px, 1180px);
-      }
-
-      .brand {
-        letter-spacing: 0.05em;
-        font-size: 0.86rem;
-      }
-
-      .brand-mark {
-        width: 36px;
-        height: 36px;
-      }
-
-      .nav {
-        height: 68px;
-      }
-
-      .hero {
-        padding-top: 42px;
-      }
-
-      .hero-visual {
-        height: 330px;
-        border-radius: 28px 28px 0 0;
-      }
-
-      .hero-badge {
-        width: 84px;
-        height: 84px;
-        font-size: 0.76rem;
-        left: 5%;
-      }
-
-      .hero-actions,
-      .form-grid {
-        grid-template-columns: 1fr;
-        flex-direction: column;
-      }
-
-      .btn {
-        width: 100%;
-      }
-
-      .pilot,
-      .contact-panel {
-        padding: 26px;
-      }
-
-      .step {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Arcovra | Orchard Protection Systems</title>
+
+<meta
+  name="description"
+  content="Arcovra develops orchard protection systems for Australian fruit growers including bird netting, hail protection and weather protection systems."
+/>
+
+<style>
+
+:root{
+  --forest:#0d3d25;
+  --green:#1d6a3b;
+  --leaf:#78af45;
+  --gold:#c6941c;
+  --cream:#f5f1e7;
+  --white:#ffffff;
+  --text:#243029;
+  --muted:#67726b;
+  --line:#e2dbc8;
+  --shadow:0 18px 45px rgba(0,0,0,.08);
+  --radius:28px;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial, Helvetica, sans-serif;
+  background:var(--cream);
+  color:var(--text);
+  line-height:1.55;
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+.container{
+  width:min(1180px, calc(100% - 32px));
+  margin:auto;
+}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(245,241,231,.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(0,0,0,.05);
+}
+
+.nav{
+  height:78px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+.brand-logo{
+  width:46px;
+  height:46px;
+  border-radius:14px;
+  background:linear-gradient(135deg,var(--forest),var(--green));
+  display:grid;
+  place-items:center;
+  color:var(--gold);
+  font-weight:900;
+  box-shadow:var(--shadow);
+}
+
+.brand h1{
+  font-size:1.15rem;
+  color:var(--forest);
+  letter-spacing:.08em;
+}
+
+.brand small{
+  display:block;
+  font-size:.62rem;
+  color:var(--muted);
+  letter-spacing:.18em;
+}
+
+.nav-links{
+  display:flex;
+  gap:24px;
+  font-weight:700;
+  color:var(--text);
+}
+
+.nav-links a:hover{
+  color:var(--green);
+}
+
+.btn{
+  padding:13px 22px;
+  border-radius:999px;
+  font-weight:800;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  transition:.2s ease;
+}
+
+.btn:hover{
+  transform:translateY(-1px);
+}
+
+.btn-green{
+  background:var(--forest);
+  color:white;
+}
+
+.btn-outline{
+  border:1px solid var(--line);
+  background:white;
+}
+
+.hero{
+  padding:70px 0 0;
+}
+
+.hero-copy{
+  text-align:center;
+  max-width:860px;
+  margin:auto;
+}
+
+.mini{
+  color:var(--gold);
+  text-transform:uppercase;
+  letter-spacing:.18em;
+  font-size:.78rem;
+  font-weight:900;
+}
+
+.hero h2{
+  font-family:Georgia, serif;
+  font-size:clamp(3rem, 7vw, 6rem);
+  line-height:.94;
+  letter-spacing:-.05em;
+  color:var(--forest);
+  margin:18px 0;
+}
+
+.hero p{
+  color:var(--muted);
+  font-size:1.1rem;
+  max-width:740px;
+  margin:auto auto 28px;
+}
+
+.hero-actions{
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  flex-wrap:wrap;
+}
+
+.hero-image{
+  margin-top:40px;
+  height:500px;
+  overflow:hidden;
+  border-radius:36px 36px 0 0;
+  box-shadow:var(--shadow);
+}
+
+.hero-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.feature-bar{
+  transform:translateY(-34px);
+}
+
+.features{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  background:white;
+  border-radius:24px;
+  overflow:hidden;
+  border:1px solid var(--line);
+  box-shadow:var(--shadow);
+}
+
+.feature{
+  padding:22px;
+  border-right:1px solid var(--line);
+}
+
+.feature:last-child{
+  border-right:0;
+}
+
+.feature strong{
+  display:block;
+  color:var(--forest);
+  margin-bottom:6px;
+}
+
+.feature span{
+  color:var(--muted);
+  font-size:.9rem;
+}
+
+section{
+  padding:90px 0;
+}
+
+.section-head{
+  max-width:760px;
+  margin-bottom:34px;
+}
+
+.section-head h3{
+  font-family:Georgia, serif;
+  font-size:clamp(2.3rem, 4vw, 4rem);
+  line-height:1;
+  margin:14px 0;
+  letter-spacing:-.04em;
+}
+
+.section-head p{
+  color:var(--muted);
+}
+
+.grid-2{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:28px;
+}
+
+.grid-3{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.grid-4{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+
+.card{
+  background:white;
+  border-radius:var(--radius);
+  overflow:hidden;
+  border:1px solid var(--line);
+  box-shadow:0 12px 30px rgba(0,0,0,.04);
+}
+
+.card-image{
+  height:180px;
+  overflow:hidden;
+}
+
+.card-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.card-content{
+  padding:24px;
+}
+
+.card-content h4{
+  color:var(--forest);
+  margin-bottom:10px;
+  font-size:1.15rem;
+}
+
+.card-content p{
+  color:var(--muted);
+  font-size:.95rem;
+}
+
+.large-image{
+  border-radius:34px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+
+.large-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.dark{
+  background:var(--forest);
+  color:white;
+}
+
+.dark .section-head h3{
+  color:white;
+}
+
+.dark .section-head p{
+  color:rgba(255,255,255,.72);
+}
+
+.table-wrap{
+  overflow:auto;
+  border-radius:26px;
+  background:white;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  min-width:900px;
+}
+
+th,td{
+  padding:18px;
+  border-bottom:1px solid #ece7d7;
+  text-align:left;
+}
+
+th{
+  background:#faf7ef;
+  color:var(--forest);
+  font-size:.78rem;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+
+td{
+  color:var(--muted);
+}
+
+.pilot{
+  background:linear-gradient(135deg,var(--forest),var(--green));
+  color:white;
+  padding:40px;
+  border-radius:34px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+  box-shadow:var(--shadow);
+}
+
+.pilot p{
+  color:rgba(255,255,255,.75);
+}
+
+.contact{
+  background:var(--forest);
+  color:white;
+  border-radius:36px;
+  padding:40px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+}
+
+.contact p{
+  color:rgba(255,255,255,.75);
+}
+
+form{
+  display:grid;
+  gap:14px;
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+
+input,
+textarea,
+select{
+  width:100%;
+  padding:14px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.15);
+  background:rgba(255,255,255,.08);
+  color:white;
+  font:inherit;
+}
+
+textarea{
+  min-height:130px;
+}
+
+footer{
+  padding:40px 0;
+  border-top:1px solid var(--line);
+  color:var(--muted);
+}
+
+@media(max-width:980px){
+
+  .nav-links{
+    display:none;
+  }
+
+  .grid-2,
+  .grid-3,
+  .grid-4,
+  .pilot,
+  .contact,
+  .features{
+    grid-template-columns:1fr;
+  }
+
+  .feature{
+    border-right:0;
+    border-bottom:1px solid var(--line);
+  }
+
+  .feature:last-child{
+    border-bottom:0;
+  }
+
+}
+
+@media(max-width:580px){
+
+  .hero-image{
+    height:340px;
+  }
+
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+
+  .btn{
+    width:100%;
+  }
+
+}
+
+</style>
 </head>
 
 <body>
-  <header>
-    <div class="container nav">
-      <a class="brand" href="#top" aria-label="Arcovra home">
-        <div class="brand-mark">A</div>
-        <div>
-          ARCOVRA
-          <small>ORCHARD PROTECTION SYSTEMS</small>
-        </div>
-      </a>
 
-      <nav class="nav-links" aria-label="Main navigation">
-        <a href="#systems">Systems</a>
-        <a href="#netting">Netting Guide</a>
-        <a href="#protection">Protection</a>
-        <a href="#crops">Crops</a>
-        <a href="#pilot">Pilot Installs</a>
-        <a href="#contact">Contact</a>
-      </nav>
+<header>
+  <div class="container nav">
 
-      <a class="btn btn-gold" href="#contact">Request pilot</a>
-    </div>
-  </header>
+    <div class="brand">
+      <div class="brand-logo">A</div>
 
-  <main id="top">
-    <section class="hero">
-      <div class="container">
-        <div class="hero-copy">
-          <div class="mini">Protection systems for commercial fruit growers</div>
-          <h1>Smarter orchard protection, designed around real farm labour.</h1>
-          <p>
-            Arcovra is developing modular orchard netting and crop-cover systems for Australian growers who need practical protection from birds, hail, insects and weather — without making seasonal operation harder than it needs to be.
-          </p>
-
-          <div class="hero-actions">
-            <a class="btn btn-green" href="#pilot">Pilot installations</a>
-            <a class="btn btn-outline" href="#systems">View systems</a>
-          </div>
-        </div>
-
-        <div class="hero-visual" aria-label="Commercial orchard netting illustration with grey-black posts">
-          <div class="mountains"></div>
-          <div class="canopy"></div>
-          <div class="rows"></div>
-
-          <div class="post p1"></div>
-          <div class="post p2"></div>
-          <div class="post p3"></div>
-          <div class="post p4"></div>
-          <div class="post p5"></div>
-
-          <div class="hero-badge">PILOT<br />SYSTEMS</div>
-
-          <div class="fruit-stack">
-            <div class="fruit-bubble">🍊</div>
-            <div class="fruit-bubble">🍒</div>
-            <div class="fruit-bubble">🍏</div>
-            <div class="fruit-bubble">🫐</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="feature-bar">
-      <div class="container features">
-        <div class="feature">
-          <div class="feature-icon">🛡</div>
-          <div>
-            <strong>Protect yield</strong>
-            <span>Bird, hail, insect and weather protection</span>
-          </div>
-        </div>
-
-        <div class="feature">
-          <div class="feature-icon">⏱</div>
-          <div>
-            <strong>Reduce seasonal work</strong>
-            <span>Design focus on faster, simpler operation</span>
-          </div>
-        </div>
-
-        <div class="feature">
-          <div class="feature-icon">🌿</div>
-          <div>
-            <strong>Crop-specific design</strong>
-            <span>Systems matched to fruit type and threat</span>
-          </div>
-        </div>
-
-        <div class="feature">
-          <div class="feature-icon">↗</div>
-          <div>
-            <strong>Commercial scale</strong>
-            <span>Layouts intended for real orchard blocks</span>
-          </div>
-        </div>
+      <div>
+        <h1>ARCOVRA</h1>
+        <small>ORCHARD PROTECTION SYSTEMS</small>
       </div>
     </div>
 
-    <section id="systems">
-      <div class="container grid-2">
-        <div class="section-head">
-          <div class="mini">Systems</div>
-          <h2>Protection needs to match the crop, the site and the risk.</h2>
-          <p>
-            A bird net is not the same as a hail net. Rain cover behaves differently again. Arcovra’s system approach is built around selecting the right cover, spacing, support structure and seasonal operating method for the orchard.
-          </p>
-        </div>
+    <nav class="nav-links">
+      <a href="#systems">Systems</a>
+      <a href="#protection">Protection</a>
+      <a href="#crops">Crops</a>
+      <a href="#pilot">Pilot Installs</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-        <div class="image-slot">
-          <span>Image placeholder: commercial orchard canopy</span>
-          <p>
-            Replace this with a large-span commercial orchard image: long rows, grey or black support posts, wide drive aisle, overhead netting, and a professional agricultural feel.
-          </p>
-        </div>
+    <a class="btn btn-green" href="#contact">Request Pilot</a>
+
+  </div>
+</header>
+
+<section class="hero">
+
+  <div class="container">
+
+    <div class="hero-copy">
+
+      <div class="mini">Commercial orchard protection systems</div>
+
+      <h2>Practical orchard protection designed around real farm operation.</h2>
+
+      <p>
+        Arcovra is developing modular orchard netting and crop protection systems for Australian fruit growers needing practical protection from birds, hail, insects and weather exposure.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn btn-green" href="#pilot">Pilot Installations</a>
+        <a class="btn btn-outline" href="#systems">View Systems</a>
       </div>
 
-      <div class="container grid-4" style="margin-top: 28px;">
-        <article class="card system-card">
-          <div class="system-image"></div>
-          <div class="system-content">
-            <span class="tag">Bird pressure</span>
-            <h3>Bird Net System</h3>
-            <p>For fruit blocks where birds, bats or flying pests reduce marketable yield. Designed around airflow, access and seasonal practicality.</p>
-          </div>
-        </article>
-
-        <article class="card system-card">
-          <div class="system-image"></div>
-          <div class="system-content">
-            <span class="tag">Storm risk</span>
-            <h3>Hail Net System</h3>
-            <p>For blocks needing stronger netting against hail and impact damage, while still considering light, wind load and crop quality.</p>
-          </div>
-        </article>
-
-        <article class="card system-card">
-          <div class="system-image"></div>
-          <div class="system-content">
-            <span class="tag">Pest exclusion</span>
-            <h3>Insect Net System</h3>
-            <p>Fine mesh systems for targeted pest exclusion where edge sealing, access points and airflow must be considered carefully.</p>
-          </div>
-        </article>
-
-        <article class="card system-card">
-          <div class="system-image"></div>
-          <div class="system-content">
-            <span class="tag">Rain / sun / wind</span>
-            <h3>Weather Cover Options</h3>
-            <p>Crop-cover layouts for rain, sunburn, wind rub and exposed sites, developed around smaller bays and site-specific constraints.</p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="pilot">
-      <div class="container pilot">
-        <div>
-          <div class="mini">Pilot installations</div>
-          <h2>Early grower pilots, not overpromised systems.</h2>
-          <p>
-            Arcovra is currently at the development and pilot stage. The goal is to work with selected growers on practical trial installations, collect real operating data, and refine the system before larger commercial rollout.
-          </p>
-
-          <ul>
-            <li>Start with manageable orchard blocks</li>
-            <li>Test installation time and seasonal operation</li>
-            <li>Compare against existing timber or conventional net systems</li>
-            <li>Refine structure, netting, anchors and operating procedure</li>
-          </ul>
-        </div>
-
-        <div class="pilot-note">
-          <strong>What this means for growers</strong>
-          <p>
-            A pilot installation should be treated as a collaborative development project. The system will be designed carefully, but final commercial claims should only be made after testing, engineering review and real-world performance data.
-          </p>
-          <br />
-          <p>
-            This keeps the approach honest: practical protection first, proof before scale, and no unrealistic promises before the system has been validated.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="netting" class="dark">
-      <div class="container">
-        <div class="section-head">
-          <div class="mini">Netting guide</div>
-          <h2>Core cover types and where they fit.</h2>
-          <p>
-            The tighter or more solid the cover, the higher the wind load. Bird netting can often work with wider spans. Rain film and fine insect mesh need more careful design because they catch more wind and can alter the orchard microclimate.
-          </p>
-        </div>
-
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Cover type</th>
-                <th>Main purpose</th>
-                <th>Typical use</th>
-                <th>Key design issue</th>
-                <th>Arcovra design approach</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Bird net</strong></td>
-                <td>Bird and bat exclusion</td>
-                <td>Cherries, berries, apples, pears, grapes and stone fruit</td>
-                <td>Wildlife safety, airflow, access and seasonal labour</td>
-                <td>Wide-span or modular systems designed around faster handling and practical orchard access.</td>
-              </tr>
-
-              <tr>
-                <td><strong>Hail net</strong></td>
-                <td>Impact protection</td>
-                <td>Apples, pears, cherries, citrus and stone fruit</td>
-                <td>Higher structural loading and light-management trade-offs</td>
-                <td>Stronger net/support combinations where hail risk justifies the cost and structure.</td>
-              </tr>
-
-              <tr>
-                <td><strong>Insect net</strong></td>
-                <td>Pest exclusion</td>
-                <td>Fruit fly, moth, bug or beetle pressure</td>
-                <td>Fine mesh reduces airflow and increases sealing requirements</td>
-                <td>Used selectively where pest pressure justifies tighter mesh and more detailed edge control.</td>
-              </tr>
-
-              <tr>
-                <td><strong>Shade net</strong></td>
-                <td>Sunburn and heat reduction</td>
-                <td>Hot regions and exposed blocks</td>
-                <td>Too much shade can affect colour, maturity and crop response</td>
-                <td>Selected carefully by crop and region, not applied as a one-size-fits-all cover.</td>
-              </tr>
-
-              <tr>
-                <td><strong>Rain cover film</strong></td>
-                <td>Rain cracking and wet harvest protection</td>
-                <td>Cherries, berries, grapes and premium fruit</td>
-                <td>Acts like a sail and needs smaller bays or controlled release</td>
-                <td>Approached as a specific rain-cover option, not simply added to a bird-net structure.</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <section id="protection">
-      <div class="container">
-        <div class="section-head">
-          <div class="mini">Protection matrix</div>
-          <h2>What are you protecting against?</h2>
-          <p>
-            The best system depends on the main risk. A cherry block exposed to rain cracking does not need the same structure as a citrus block fighting wind rub or an apple orchard needing hail protection.
-          </p>
-        </div>
-
-        <div class="grid-3">
-          <article class="card">
-            <div class="card-icon">🐦</div>
-            <h3>Birds & bats</h3>
-            <p>Best handled with exclusion netting that is installed, tensioned and maintained properly. Seasonal operation is often the biggest labour issue.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">🧊</div>
-            <h3>Hail</h3>
-            <p>Requires stronger cover selection and support design. Hail protection is usually a higher-cost system but can protect an entire season’s crop value.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">🐛</div>
-            <h3>Insects</h3>
-            <p>Fine mesh can help exclude pests, but it must be balanced with airflow, pollination, heat and access requirements.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">🌧</div>
-            <h3>Rain</h3>
-            <p>Rain covers are especially relevant to cherries and other premium crops, but they introduce higher wind loads and need smaller, controlled sections.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">☀️</div>
-            <h3>Sunburn & heat</h3>
-            <p>Shade can reduce fruit damage and stress, but the shade percentage and colour need to be matched to the crop and climate.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">💨</div>
-            <h3>Wind</h3>
-            <p>Wind affects structure loads, net movement, fruit rub and anchor design. It should be part of the layout from the beginning.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="crops" class="dark">
-      <div class="container">
-        <div class="section-head">
-          <div class="mini">Crops</div>
-          <h2>Fruit-specific protection priorities.</h2>
-          <p>
-            Arcovra is initially focused on orchard and fruit protection systems. Each crop has different risks, economics and handling requirements.
-          </p>
-        </div>
-
-        <div class="grid-3">
-          <article class="card">
-            <h3>Cherries</h3>
-            <p>High-value crop with strong bird pressure, rain cracking risk, hail exposure and seasonal labour demand. A good first market for pilot systems.</p>
-          </article>
-
-          <article class="card">
-            <h3>Apples & pears</h3>
-            <p>Often suited to bird and hail systems. Main drivers can include hail damage, sunburn, birds, flying foxes and packout improvement.</p>
-          </article>
-
-          <article class="card">
-            <h3>Citrus</h3>
-            <p>Protection can focus on hail, wind rub, sunburn, birds and bats. Windbreak and perimeter protection can be just as important as overhead cover.</p>
-          </article>
-
-          <article class="card">
-            <h3>Berries</h3>
-            <p>Bird pressure, hail, heat, rain and microclimate management matter. Smaller modular systems may be more suitable than large-span orchard layouts.</p>
-          </article>
-
-          <article class="card">
-            <h3>Stone fruit</h3>
-            <p>Peaches, nectarines, apricots and plums may need protection from birds, hail, sunburn and rain-related quality loss.</p>
-          </article>
-
-          <article class="card">
-            <h3>Table grapes</h3>
-            <p>Protection can target birds, sunburn, hail, rain splitting and bunch quality. Vineyard layouts may need a different format from orchard rows.</p>
-          </article>
-        </div>
-
-        <div class="crop-strip">
-          <div class="crop-pill"><span class="dot cherry"></span>Cherries</div>
-          <div class="crop-pill"><span class="dot apple"></span>Apples</div>
-          <div class="crop-pill"><span class="dot orange"></span>Citrus</div>
-          <div class="crop-pill"><span class="dot berry"></span>Berries</div>
-          <div class="crop-pill"><span class="dot stone"></span>Stone fruit</div>
-          <div class="crop-pill"><span class="dot grape"></span>Grapes</div>
-        </div>
-      </div>
-    </section>
-
-    <section id="process">
-      <div class="container grid-2">
-        <div class="section-head">
-          <div class="mini">Turnkey pathway</div>
-          <h2>From site review to practical installation.</h2>
-          <p>
-            The business model is intended to be full turnkey: concept layout, supply, installation management and handover. Early jobs should stay small enough to measure, refine and improve.
-          </p>
-
-          <div class="image-slot" style="margin-top: 24px; min-height: 260px;">
-            <span>Image placeholder: installation process</span>
-            <p>
-              Replace with a real installation photo later: posts, screw piles, cable setup, netting operation or a pilot orchard bay.
-            </p>
-          </div>
-        </div>
-
-        <div class="process">
-          <div class="step">
-            <div>
-              <h3>Site assessment</h3>
-              <p>Review crop type, hectares, row spacing, wind exposure, soil, machinery access and existing netting problems.</p>
-            </div>
-          </div>
-
-          <div class="step">
-            <div>
-              <h3>System selection</h3>
-              <p>Select the likely cover type: bird net, hail net, insect net, weather cover, or a staged combination.</p>
-            </div>
-          </div>
-
-          <div class="step">
-            <div>
-              <h3>Layout and review</h3>
-              <p>Confirm proposed spacing, post arrangement, cable paths, anchors, access, operating limits and pilot scope.</p>
-            </div>
-          </div>
-
-          <div class="step">
-            <div>
-              <h3>Install and measure</h3>
-              <p>Install the pilot, measure labour, observe operation, record issues and improve the system before scaling.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="regions">
-      <div class="container grid-2">
-        <div class="image-slot">
-          <span>Image placeholder: Australian orchard regions</span>
-          <p>
-            Replace with a national fruit-region image or collage: Tasmania cherries, Goulburn Valley apples and pears, Sunraysia/Riverland citrus and grapes, Riverina fruit, Coffs Harbour berries.
-          </p>
-        </div>
-
-        <div class="section-head">
-          <div class="mini">Australia-wide orchard focus</div>
-          <h2>Designed for Australian fruit regions, starting with pilot blocks.</h2>
-          <p>
-            Arcovra should start with carefully selected pilot installations, then expand only after proving installation speed, seasonal operation, durability and grower value.
-          </p>
-
-          <div class="grid-2" style="grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 24px;">
-            <div class="card">
-              <h3>Early pilot fit</h3>
-              <p>High-value fruit blocks where bird pressure, rain risk or seasonal labour costs justify better protection.</p>
-            </div>
-
-            <div class="card">
-              <h3>Expansion fit</h3>
-              <p>Commercial orchards and fruit-growing regions where netting is already accepted but labour and maintenance remain problems.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="contact">
-      <div class="container contact-panel">
-        <div>
-          <div class="mini">Pilot enquiry</div>
-          <h2>Interested in testing a better orchard protection system?</h2>
-          <p>
-            This form opens an email draft from your device. It can later be connected to a proper form service once the site is ready for broader enquiries.
-          </p>
-
-          <ul>
-            <li>Grower site assessment</li>
-            <li>Crop and protection-risk review</li>
-            <li>Concept layout and estimate</li>
-            <li>Small pilot installation proposal</li>
-          </ul>
-        </div>
-
-        <form id="contactForm">
-          <div class="form-grid">
-            <input id="name" placeholder="Full name" required />
-            <input id="email" type="email" placeholder="Email address" required />
-          </div>
-
-          <div class="form-grid">
-            <input id="location" placeholder="Orchard location" />
-            <select id="crop">
-              <option value="">Crop type</option>
-              <option>Cherries</option>
-              <option>Apples / pears</option>
-              <option>Citrus</option>
-              <option>Berries</option>
-              <option>Stone fruit</option>
-              <option>Table grapes</option>
-              <option>Other</option>
-            </select>
-          </div>
-
-          <textarea id="message" placeholder="Tell us about your orchard, hectares, current netting setup and protection problem."></textarea>
-
-          <button class="btn btn-gold" type="submit">Request pilot discussion</button>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container footer-row">
-      <div>© 2026 Arcovra. Orchard Protection Systems.</div>
-      <div>Practical crop-cover systems for Australian fruit growers.</div>
     </div>
-  </footer>
 
-  <script>
-    document.getElementById("contactForm").addEventListener("submit", function (event) {
-      event.preventDefault();
+    <div class="hero-image">
+      <img
+        src="/images/hero-commercial-orchard-netting.jpg"
+        alt="Commercial orchard netting system"
+      />
+    </div>
 
-      const name = document.getElementById("name").value;
-      const email = document.getElementById("email").value;
-      const location = document.getElementById("location").value;
-      const crop = document.getElementById("crop").value;
-      const message = document.getElementById("message").value;
+  </div>
 
-      const subject = encodeURIComponent("Arcovra pilot enquiry");
-      const body = encodeURIComponent(
-        `Name: ${name}\nEmail: ${email}\nLocation: ${location}\nCrop: ${crop}\n\nMessage:\n${message}`
-      );
+</section>
 
-      window.location.href = `mailto:dylanjoelchristian2001@gmail.com?subject=${subject}&body=${body}`;
-    });
-  </script>
+<div class="feature-bar">
+
+  <div class="container features">
+
+    <div class="feature">
+      <strong>Bird protection</strong>
+      <span>Reduce crop loss from birds and bats.</span>
+    </div>
+
+    <div class="feature">
+      <strong>Hail protection</strong>
+      <span>Protect fruit quality from storm damage.</span>
+    </div>
+
+    <div class="feature">
+      <strong>Seasonal practicality</strong>
+      <span>Focus on manageable operation and handling.</span>
+    </div>
+
+    <div class="feature">
+      <strong>Commercial scale</strong>
+      <span>Designed around real orchard layouts.</span>
+    </div>
+
+  </div>
+
+</div>
+
+<section id="systems">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <div class="mini">Systems</div>
+
+      <h3>Different crops require different protection systems.</h3>
+
+      <p>
+        Bird netting, hail netting, insect exclusion and weather protection all behave differently. Cover type, mesh, support spacing and seasonal operation need to match the crop and region.
+      </p>
+
+    </div>
+
+    <div class="grid-4">
+
+      <div class="card">
+        <div class="card-image">
+          <img src="/images/system-bird-protection.jpg" alt="">
+        </div>
+
+        <div class="card-content">
+          <h4>Bird Netting</h4>
+          <p>
+            Protection systems for bird and bat pressure while maintaining orchard access and airflow.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-image">
+          <img src="/images/system-hail-protection.jpg" alt="">
+        </div>
+
+        <div class="card-content">
+          <h4>Hail Protection</h4>
+          <p>
+            Stronger net systems for hail-prone regions and high-value fruit crops.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-image">
+          <img src="/images/system-insect-protection.jpg" alt="">
+        </div>
+
+        <div class="card-content">
+          <h4>Insect Exclusion</h4>
+          <p>
+            Fine mesh systems for orchards requiring targeted insect and pest protection.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-image">
+          <img src="/images/system-weather-protection.jpg" alt="">
+        </div>
+
+        <div class="card-content">
+          <h4>Weather Protection</h4>
+          <p>
+            Protection from rain, wind exposure and orchard weather impacts.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section>
+
+  <div class="container grid-2">
+
+    <div class="large-image">
+      <img
+        src="/images/installation-large-cherry-orchard.jpg"
+        alt=""
+      />
+    </div>
+
+    <div class="section-head">
+
+      <div class="mini">Commercial orchard focus</div>
+
+      <h3>Protection systems designed for real orchard operation.</h3>
+
+      <p>
+        Orchard protection should not create more problems than it solves. Arcovra’s focus is practical layouts, manageable installation and systems that can realistically operate during harvest seasons.
+      </p>
+
+      <br><br>
+
+      <p>
+        The long-term goal is to develop systems that reduce labour intensity, improve seasonal handling and better suit large-scale Australian orchard layouts.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section id="pilot" class="dark">
+
+  <div class="container">
+
+    <div class="pilot">
+
+      <div>
+
+        <div class="mini">Pilot installations</div>
+
+        <h3 style="font-size:3rem; margin:16px 0;">
+          Early-stage pilot systems.
+        </h3>
+
+        <p>
+          Arcovra is currently focused on pilot orchard installations and system development. The objective is to test practical installation methods, seasonal operation and long-term durability before wider rollout.
+        </p>
+
+      </div>
+
+      <div>
+
+        <p>
+          Pilot projects are intended as collaborative grower developments. Each installation helps refine spacing, structures, anchoring systems, net operation and orchard integration.
+        </p>
+
+        <br>
+
+        <p>
+          The focus is proof through testing and real orchard performance rather than overpromising early commercial claims.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section id="protection">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <div class="mini">Protection</div>
+
+      <h3>Main orchard protection risks.</h3>
+
+    </div>
+
+    <div class="grid-3">
+
+      <div class="card">
+        <div class="card-image">
+          <img src="/images/orchard-netting-hillside.jpg" alt="">
+        </div>
+
+        <div class="card-content">
+          <h4>Bird Pressure</h4>
+          <p>
+            Birds and bats remain one of the biggest causes of fruit loss across many Australian growing regions.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-image">
+          <img src="/images/orchard-rain-cover-wide.jpg" alt="">
+        </div>
+
+        <div class="card-content">
+          <h4>Rain & Weather</h4>
+          <p>
+            Rain cracking, storm exposure and weather damage can heavily impact premium fruit quality.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-image">
+          <img src="/images/orchard-under-canopy-row.jpg" alt="">
+        </div>
+
+        <div class="card-content">
+          <h4>Seasonal Operation</h4>
+          <p>
+            Netting systems need to work practically with machinery, access and harvest operation.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section id="crops" class="dark">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <div class="mini">Crops</div>
+
+      <h3>Initial orchard crop focus.</h3>
+
+      <p>
+        Different fruit types have different protection requirements, economics and weather risks.
+      </p>
+
+    </div>
+
+    <div class="grid-3">
+
+      <div class="card">
+        <div class="card-content">
+          <h4>Cherries</h4>
+          <p>
+            Bird pressure, rain cracking and premium fruit quality make cherries a strong early application.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-content">
+          <h4>Apples & Pears</h4>
+          <p>
+            Hail, birds and sun exposure are common drivers for orchard protection systems.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-content">
+          <h4>Citrus</h4>
+          <p>
+            Wind, hail, bats and weather exposure can all affect fruit quality and packout.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section id="contact">
+
+  <div class="container">
+
+    <div class="contact">
+
+      <div>
+
+        <div class="mini">Contact</div>
+
+        <h3 style="font-size:3rem; margin:16px 0;">
+          Discuss a pilot orchard project.
+        </h3>
+
+        <p>
+          Arcovra is currently interested in speaking with growers about pilot orchard installations and future development opportunities.
+        </p>
+
+      </div>
+
+      <form id="contactForm">
+
+        <div class="form-grid">
+
+          <input id="name" placeholder="Full Name" required>
+
+          <input id="email" type="email" placeholder="Email Address" required>
+
+        </div>
+
+        <div class="form-grid">
+
+          <input id="location" placeholder="Orchard Location">
+
+          <select id="crop">
+            <option>Crop Type</option>
+            <option>Cherries</option>
+            <option>Apples / Pears</option>
+            <option>Citrus</option>
+            <option>Berries</option>
+            <option>Stone Fruit</option>
+          </select>
+
+        </div>
+
+        <textarea id="message" placeholder="Tell us about your orchard and protection requirements."></textarea>
+
+        <button class="btn btn-green" type="submit">
+          Request Discussion
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
+
+<footer>
+
+  <div class="container">
+    © 2026 Arcovra Orchard Protection Systems
+  </div>
+
+</footer>
+
+<script>
+
+document.getElementById("contactForm").addEventListener("submit", function(e){
+
+  e.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const location = document.getElementById("location").value;
+  const crop = document.getElementById("crop").value;
+  const message = document.getElementById("message").value;
+
+  const subject = encodeURIComponent("Arcovra Pilot Enquiry");
+
+  const body = encodeURIComponent(
+`Name: ${name}
+Email: ${email}
+Location: ${location}
+Crop: ${crop}
+
+Message:
+${message}`
+  );
+
+  window.location.href =
+`mailto:dylanjoelchristian2001@gmail.com?subject=${subject}&body=${body}`;
+
+});
+
+</script>
+
 </body>
 </html>
