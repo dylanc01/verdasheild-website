@@ -3,26 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Verdasheild | Orchard Protection Systems Australia</title>
+
+  <title>Arcovra | Orchard Protection Systems Australia</title>
+
   <meta
     name="description"
-    content="Verdasheild designs orchard netting, rain cover, hail protection and crop protection systems for Australian fruit growers."
+    content="Arcovra develops orchard protection systems for Australian fruit growers, including bird netting, hail protection, insect exclusion and weather protection systems."
   />
 
   <style>
     :root {
-      --forest: #103d22;
+      --forest: #0f3d24;
+      --deep: #082b19;
       --green: #1f6b3b;
-      --leaf: #70ad3d;
+      --leaf: #74a944;
       --gold: #bd8a17;
-      --cream: #f7f3e7;
+      --gold-light: #e2c16b;
+      --cream: #f6f1e5;
       --cream2: #fffdf7;
-      --charcoal: #202a25;
-      --muted: #66736b;
-      --line: #e3d9c1;
       --white: #ffffff;
-      --black-post: #252c29;
-      --shadow: 0 22px 55px rgba(24, 43, 31, 0.13);
+      --charcoal: #202a25;
+      --muted: #68736d;
+      --line: #e5dac0;
+      --post: #242b29;
+      --shadow: 0 22px 55px rgba(23, 40, 30, 0.13);
       --radius: 28px;
     }
 
@@ -55,10 +59,10 @@
 
     .mini {
       color: var(--gold);
-      font-weight: 800;
       font-size: 0.78rem;
-      letter-spacing: 0.16em;
       text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-weight: 900;
     }
 
     .btn {
@@ -69,9 +73,10 @@
       padding: 0 22px;
       border-radius: 999px;
       border: 1px solid transparent;
-      font-weight: 800;
+      font-weight: 850;
       cursor: pointer;
       transition: 0.2s ease;
+      white-space: nowrap;
     }
 
     .btn:hover {
@@ -81,18 +86,18 @@
     .btn-green {
       background: var(--forest);
       color: white;
-      box-shadow: 0 14px 28px rgba(16, 61, 34, 0.24);
+      box-shadow: 0 14px 28px rgba(15, 61, 36, 0.22);
     }
 
     .btn-gold {
       background: var(--gold);
       color: white;
-      box-shadow: 0 14px 28px rgba(189, 138, 23, 0.25);
+      box-shadow: 0 14px 28px rgba(189, 138, 23, 0.24);
     }
 
     .btn-outline {
+      background: rgba(255, 255, 255, 0.7);
       border-color: var(--line);
-      background: rgba(255, 255, 255, 0.72);
       color: var(--forest);
     }
 
@@ -100,9 +105,9 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(247, 243, 231, 0.9);
+      background: rgba(246, 241, 229, 0.92);
       backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(16, 61, 34, 0.08);
+      border-bottom: 1px solid rgba(15, 61, 36, 0.08);
     }
 
     .nav {
@@ -119,58 +124,61 @@
       gap: 12px;
       color: var(--forest);
       font-weight: 900;
-      letter-spacing: 0.07em;
+      letter-spacing: 0.11em;
     }
 
     .brand-mark {
       width: 42px;
       height: 42px;
-      border-radius: 12px;
+      border-radius: 14px;
+      background:
+        linear-gradient(135deg, var(--forest), var(--green));
       display: grid;
       place-items: center;
-      background: var(--forest);
-      color: var(--gold);
-      font-weight: 900;
-      box-shadow: 0 10px 25px rgba(16, 61, 34, 0.18);
+      color: var(--gold-light);
+      box-shadow: 0 12px 26px rgba(15, 61, 36, 0.2);
+      font-size: 1.05rem;
     }
 
     .brand small {
       display: block;
-      letter-spacing: 0.22em;
-      font-size: 0.54rem;
-      font-weight: 800;
       margin-top: -4px;
       color: var(--muted);
+      font-size: 0.54rem;
+      letter-spacing: 0.22em;
+      font-weight: 850;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 24px;
-      color: var(--charcoal);
+      gap: 23px;
       font-size: 0.92rem;
-      font-weight: 700;
+      font-weight: 760;
+      color: var(--charcoal);
     }
 
     .nav-links a:hover {
       color: var(--green);
     }
 
+    /* HERO */
+
     .hero {
-      padding: 58px 0 0;
       background: linear-gradient(180deg, var(--cream2), var(--cream));
+      padding: 58px 0 0;
       overflow: hidden;
     }
 
     .hero-copy {
-      max-width: 880px;
-      margin: 0 auto 30px;
       text-align: center;
+      max-width: 900px;
+      margin: 0 auto 32px;
     }
 
     h1 {
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(3.1rem, 7vw, 6.2rem);
+      font-size: clamp(3rem, 7vw, 6.1rem);
       line-height: 0.94;
       letter-spacing: -0.055em;
       color: var(--forest);
@@ -178,7 +186,7 @@
     }
 
     .hero-copy p {
-      max-width: 720px;
+      max-width: 735px;
       margin: 0 auto 28px;
       color: var(--muted);
       font-size: 1.13rem;
@@ -199,8 +207,22 @@
       border-radius: 38px 38px 0 0;
       box-shadow: var(--shadow);
       background:
-        linear-gradient(180deg, #dfeadf 0%, #edf2e5 38%, #87a66c 39%, #244b29 100%);
+        linear-gradient(180deg, #dce8dc 0%, #edf2e5 38%, #87a66c 39%, #244b29 100%);
     }
+
+    /*
+      Replace this visual later with a real or AI-generated orchard image.
+
+      Suggested file:
+      /images/commercial-orchard-netting-hero.jpg
+
+      Ideal image:
+      - commercial orchard rows
+      - large-span netting
+      - black/grey posts
+      - wide drive aisle
+      - professional agricultural look
+    */
 
     .mountains {
       position: absolute;
@@ -246,10 +268,9 @@
       position: absolute;
       bottom: 0;
       width: 10px;
-      height: 245px;
-      background: var(--black-post);
+      background: var(--post);
       border-radius: 8px 8px 0 0;
-      box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.22);
     }
 
     .p1 { left: 12%; height: 260px; }
@@ -257,6 +278,25 @@
     .p3 { left: 50%; height: 205px; }
     .p4 { right: 30%; height: 220px; }
     .p5 { right: 12%; height: 260px; }
+
+    .hero-badge {
+      position: absolute;
+      left: 7%;
+      top: 72px;
+      width: 122px;
+      height: 122px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.88);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      color: var(--forest);
+      font-weight: 900;
+      line-height: 1.05;
+      font-size: 0.92rem;
+    }
 
     .fruit-stack {
       position: absolute;
@@ -278,34 +318,18 @@
       font-size: 31px;
     }
 
-    .badge {
-      position: absolute;
-      left: 7%;
-      top: 74px;
-      width: 116px;
-      height: 116px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.86);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-      display: grid;
-      place-items: center;
-      color: var(--forest);
-      font-weight: 900;
-      text-align: center;
-      line-height: 1.05;
-    }
+    /* FEATURE BAR */
 
     .feature-bar {
-      transform: translateY(-34px);
       position: relative;
       z-index: 4;
+      transform: translateY(-34px);
     }
 
     .features {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      background: rgba(255,255,255,0.95);
+      background: rgba(255,255,255,0.96);
       border: 1px solid var(--line);
       border-radius: 24px;
       overflow: hidden;
@@ -315,8 +339,8 @@
     .feature {
       padding: 20px 24px;
       display: flex;
-      align-items: center;
       gap: 14px;
+      align-items: center;
       border-right: 1px solid var(--line);
     }
 
@@ -328,7 +352,7 @@
       width: 38px;
       height: 38px;
       border-radius: 14px;
-      background: rgba(31,107,59,0.1);
+      background: rgba(31, 107, 59, 0.1);
       display: grid;
       place-items: center;
       color: var(--forest);
@@ -347,6 +371,8 @@
       font-size: 0.85rem;
       margin-top: 4px;
     }
+
+    /* SECTIONS */
 
     section {
       padding: 80px 0;
@@ -384,8 +410,14 @@
       gap: 18px;
     }
 
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
     .card {
-      background: rgba(255,255,255,0.78);
+      background: rgba(255,255,255,0.8);
       border: 1px solid var(--line);
       border-radius: var(--radius);
       padding: 26px;
@@ -424,7 +456,7 @@
     }
 
     .image-slot {
-      min-height: 360px;
+      min-height: 365px;
       border-radius: 32px;
       background:
         linear-gradient(135deg, rgba(255,255,255,0.25), rgba(31,107,59,0.18)),
@@ -444,15 +476,15 @@
       max-width: 100%;
       padding: 10px 14px;
       border-radius: 999px;
-      background: rgba(16,61,34,0.9);
+      background: rgba(16,61,34,0.92);
       color: white;
-      font-weight: 800;
+      font-weight: 850;
       font-size: 0.88rem;
     }
 
     .image-slot p {
       margin-top: 10px;
-      max-width: 520px;
+      max-width: 540px;
       background: rgba(255,255,255,0.78);
       color: #284235;
       border-radius: 16px;
@@ -485,6 +517,54 @@
       box-shadow: none;
     }
 
+    /* SYSTEMS */
+
+    .system-card {
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .system-image {
+      height: 160px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.42), rgba(16,61,34,0.28)),
+        repeating-linear-gradient(92deg, transparent 0 42px, rgba(255,255,255,0.45) 43px 45px, transparent 46px 82px),
+        linear-gradient(180deg, #dfe9d7, #8eaa6b 52%, #214f2a);
+      border-bottom: 1px solid var(--line);
+      position: relative;
+    }
+
+    .system-image::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 14%;
+      width: 8px;
+      height: 110px;
+      background: var(--post);
+      box-shadow:
+        180px -16px 0 var(--post),
+        360px -6px 0 var(--post);
+      border-radius: 6px 6px 0 0;
+    }
+
+    .system-content {
+      padding: 24px;
+    }
+
+    .system-content .tag {
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(31,107,59,0.1);
+      color: var(--forest);
+      font-size: 0.78rem;
+      font-weight: 850;
+    }
+
+    /* TABLE */
+
     .table-wrap {
       overflow-x: auto;
       border-radius: 24px;
@@ -494,7 +574,7 @@
 
     table {
       width: 100%;
-      min-width: 860px;
+      min-width: 900px;
       border-collapse: collapse;
     }
 
@@ -522,6 +602,52 @@
     td strong {
       color: var(--charcoal);
     }
+
+    /* PILOT */
+
+    .pilot {
+      background:
+        linear-gradient(135deg, rgba(16,61,34,0.96), rgba(31,107,59,0.92)),
+        radial-gradient(circle at top right, rgba(189,138,23,0.35), transparent 40%);
+      color: white;
+      border-radius: 36px;
+      padding: 40px;
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 32px;
+      box-shadow: var(--shadow);
+    }
+
+    .pilot h2 {
+      color: white;
+    }
+
+    .pilot p,
+    .pilot li {
+      color: rgba(255,255,255,0.78);
+    }
+
+    .pilot ul {
+      padding-left: 20px;
+      margin-top: 22px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .pilot-note {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 22px;
+      padding: 22px;
+    }
+
+    .pilot-note strong {
+      display: block;
+      color: white;
+      margin-bottom: 8px;
+    }
+
+    /* CROPS */
 
     .crop-strip {
       display: grid;
@@ -562,6 +688,8 @@
     .stone { background: #d66d3c; }
     .grape { background: #7047a8; }
 
+    /* PROCESS */
+
     .process {
       counter-reset: step;
       display: grid;
@@ -600,6 +728,8 @@
     .step p {
       color: var(--muted);
     }
+
+    /* CONTACT */
 
     .contact {
       padding: 60px 0 80px;
@@ -688,6 +818,8 @@
       flex-wrap: wrap;
     }
 
+    /* RESPONSIVE */
+
     @media (max-width: 980px) {
       .nav-links {
         display: none;
@@ -696,6 +828,8 @@
       .features,
       .grid-2,
       .grid-3,
+      .grid-4,
+      .pilot,
       .contact-panel {
         grid-template-columns: 1fr;
       }
@@ -724,7 +858,7 @@
       }
 
       .brand {
-        letter-spacing: 0.04em;
+        letter-spacing: 0.05em;
         font-size: 0.86rem;
       }
 
@@ -746,10 +880,10 @@
         border-radius: 28px 28px 0 0;
       }
 
-      .badge {
-        width: 82px;
-        height: 82px;
-        font-size: 0.78rem;
+      .hero-badge {
+        width: 84px;
+        height: 84px;
+        font-size: 0.76rem;
         left: 5%;
       }
 
@@ -763,6 +897,7 @@
         width: 100%;
       }
 
+      .pilot,
       .contact-panel {
         padding: 26px;
       }
@@ -777,10 +912,10 @@
 <body>
   <header>
     <div class="container nav">
-      <a class="brand" href="#top" aria-label="Verdasheild home">
-        <div class="brand-mark">V</div>
+      <a class="brand" href="#top" aria-label="Arcovra home">
+        <div class="brand-mark">A</div>
         <div>
-          VERDASHEILD
+          ARCOVRA
           <small>ORCHARD PROTECTION SYSTEMS</small>
         </div>
       </a>
@@ -790,11 +925,11 @@
         <a href="#netting">Netting Guide</a>
         <a href="#protection">Protection</a>
         <a href="#crops">Crops</a>
-        <a href="#process">Process</a>
+        <a href="#pilot">Pilot Installs</a>
         <a href="#contact">Contact</a>
       </nav>
 
-      <a class="btn btn-gold" href="#contact">Book a pilot</a>
+      <a class="btn btn-gold" href="#contact">Request pilot</a>
     </div>
   </header>
 
@@ -802,14 +937,15 @@
     <section class="hero">
       <div class="container">
         <div class="hero-copy">
-          <div class="mini">Smart protection. Stronger orchards.</div>
-          <h1>Commercial orchard protection systems for Australian growers.</h1>
+          <div class="mini">Protection systems for commercial fruit growers</div>
+          <h1>Smarter orchard protection, designed around real farm labour.</h1>
           <p>
-            Verdasheild designs orchard netting, rain cover, hail protection and crop-cover systems for fruit growers who need better protection with less seasonal labour.
+            Arcovra is developing modular orchard netting and crop-cover systems for Australian growers who need practical protection from birds, hail, insects and weather — without making seasonal operation harder than it needs to be.
           </p>
+
           <div class="hero-actions">
-            <a class="btn btn-green" href="#contact">Request a pilot</a>
-            <a class="btn btn-outline" href="#systems">Explore systems</a>
+            <a class="btn btn-green" href="#pilot">Pilot installations</a>
+            <a class="btn btn-outline" href="#systems">View systems</a>
           </div>
         </div>
 
@@ -817,13 +953,14 @@
           <div class="mountains"></div>
           <div class="canopy"></div>
           <div class="rows"></div>
+
           <div class="post p1"></div>
           <div class="post p2"></div>
           <div class="post p3"></div>
           <div class="post p4"></div>
           <div class="post p5"></div>
 
-          <div class="badge">CROP<br />SHIELD</div>
+          <div class="hero-badge">PILOT<br />SYSTEMS</div>
 
           <div class="fruit-stack">
             <div class="fruit-bubble">🍊</div>
@@ -841,28 +978,31 @@
           <div class="feature-icon">🛡</div>
           <div>
             <strong>Protect yield</strong>
-            <span>Bird, hail, sun, wind and rain systems</span>
+            <span>Bird, hail, insect and weather protection</span>
           </div>
         </div>
+
         <div class="feature">
           <div class="feature-icon">⏱</div>
           <div>
-            <strong>Reduce labour</strong>
-            <span>Built around simpler seasonal operation</span>
+            <strong>Reduce seasonal work</strong>
+            <span>Design focus on faster, simpler operation</span>
           </div>
         </div>
+
         <div class="feature">
           <div class="feature-icon">🌿</div>
           <div>
-            <strong>Improve fruit quality</strong>
-            <span>Crop-specific protection choices</span>
+            <strong>Crop-specific design</strong>
+            <span>Systems matched to fruit type and threat</span>
           </div>
         </div>
+
         <div class="feature">
           <div class="feature-icon">↗</div>
           <div>
             <strong>Commercial scale</strong>
-            <span>Designed for Australian fruit regions</span>
+            <span>Layouts intended for real orchard blocks</span>
           </div>
         </div>
       </div>
@@ -871,57 +1011,87 @@
     <section id="systems">
       <div class="container grid-2">
         <div class="section-head">
-          <div class="mini">System architecture</div>
-          <h2>Not one net. The right structure for the threat.</h2>
+          <div class="mini">Systems</div>
+          <h2>Protection needs to match the crop, the site and the risk.</h2>
           <p>
-            Bird netting, hail protection, rain film, insect exclusion and shade all behave differently. The right design depends on the crop, wind exposure, soil, region and the grower’s operating budget.
+            A bird net is not the same as a hail net. Rain cover behaves differently again. Arcovra’s system approach is built around selecting the right cover, spacing, support structure and seasonal operating method for the orchard.
           </p>
         </div>
 
         <div class="image-slot">
-          <span>Future image slot</span>
+          <span>Image placeholder: commercial orchard canopy</span>
           <p>
-            Add a real or AI-generated image of a commercial orchard canopy here: long orchard rows, wide-span netting, and grey or black posts to represent fibreglass supports.
+            Replace this with a large-span commercial orchard image: long rows, grey or black support posts, wide drive aisle, overhead netting, and a professional agricultural feel.
           </p>
         </div>
       </div>
 
-      <div class="container grid-3" style="margin-top: 26px;">
-        <article class="card">
-          <div class="card-icon">🐦</div>
-          <h3>Bird Net System</h3>
-          <p>For cherries, berries, apples, pears, stone fruit, grapes and citrus where bird or bat pressure affects marketable yield.</p>
+      <div class="container grid-4" style="margin-top: 28px;">
+        <article class="card system-card">
+          <div class="system-image"></div>
+          <div class="system-content">
+            <span class="tag">Bird pressure</span>
+            <h3>Bird Net System</h3>
+            <p>For fruit blocks where birds, bats or flying pests reduce marketable yield. Designed around airflow, access and seasonal practicality.</p>
+          </div>
         </article>
 
-        <article class="card">
-          <div class="card-icon">🧊</div>
-          <h3>Hail Net System</h3>
-          <p>Stronger netting and support structures for areas where hail events can damage fruit, leaves and branches.</p>
+        <article class="card system-card">
+          <div class="system-image"></div>
+          <div class="system-content">
+            <span class="tag">Storm risk</span>
+            <h3>Hail Net System</h3>
+            <p>For blocks needing stronger netting against hail and impact damage, while still considering light, wind load and crop quality.</p>
+          </div>
         </article>
 
-        <article class="card">
-          <div class="card-icon">🌧</div>
-          <h3>Rain Cover System</h3>
-          <p>Clear roof film or rain covers for cherries, berries, grapes and premium fruit where rain cracking or wet harvest conditions are a risk.</p>
+        <article class="card system-card">
+          <div class="system-image"></div>
+          <div class="system-content">
+            <span class="tag">Pest exclusion</span>
+            <h3>Insect Net System</h3>
+            <p>Fine mesh systems for targeted pest exclusion where edge sealing, access points and airflow must be considered carefully.</p>
+          </div>
         </article>
 
-        <article class="card">
-          <div class="card-icon">🐛</div>
-          <h3>Insect Exclusion</h3>
-          <p>Fine mesh systems for pests such as fruit fly, moths, beetles and other insects where sealed edges and access points matter.</p>
+        <article class="card system-card">
+          <div class="system-image"></div>
+          <div class="system-content">
+            <span class="tag">Rain / sun / wind</span>
+            <h3>Weather Cover Options</h3>
+            <p>Crop-cover layouts for rain, sunburn, wind rub and exposed sites, developed around smaller bays and site-specific constraints.</p>
+          </div>
         </article>
+      </div>
+    </section>
 
-        <article class="card">
-          <div class="card-icon">☀️</div>
-          <h3>Shade & Sunburn</h3>
-          <p>Shade-rated nets for hot regions where sunburn, heat stress and fruit quality losses are a major issue.</p>
-        </article>
+    <section id="pilot">
+      <div class="container pilot">
+        <div>
+          <div class="mini">Pilot installations</div>
+          <h2>Early grower pilots, not overpromised systems.</h2>
+          <p>
+            Arcovra is currently at the development and pilot stage. The goal is to work with selected growers on practical trial installations, collect real operating data, and refine the system before larger commercial rollout.
+          </p>
 
-        <article class="card">
-          <div class="card-icon">💨</div>
-          <h3>Wind Protection</h3>
-          <p>Perimeter netting, windbreak mesh and structure layouts designed to reduce wind rub, canopy damage and fruit marking.</p>
-        </article>
+          <ul>
+            <li>Start with manageable orchard blocks</li>
+            <li>Test installation time and seasonal operation</li>
+            <li>Compare against existing timber or conventional net systems</li>
+            <li>Refine structure, netting, anchors and operating procedure</li>
+          </ul>
+        </div>
+
+        <div class="pilot-note">
+          <strong>What this means for growers</strong>
+          <p>
+            A pilot installation should be treated as a collaborative development project. The system will be designed carefully, but final commercial claims should only be made after testing, engineering review and real-world performance data.
+          </p>
+          <br />
+          <p>
+            This keeps the approach honest: practical protection first, proof before scale, and no unrealistic promises before the system has been validated.
+          </p>
+        </div>
       </div>
     </section>
 
@@ -931,7 +1101,7 @@
           <div class="mini">Netting guide</div>
           <h2>Core cover types and where they fit.</h2>
           <p>
-            The tighter or more solid the cover, the higher the wind load. This is why bird netting can use wider spans, while rain film needs smaller bays, stronger hold-downs, or a release system.
+            The tighter or more solid the cover, the higher the wind load. Bird netting can often work with wider spans. Rain film and fine insect mesh need more careful design because they catch more wind and can alter the orchard microclimate.
           </p>
         </div>
 
@@ -940,54 +1110,51 @@
             <thead>
               <tr>
                 <th>Cover type</th>
+                <th>Main purpose</th>
                 <th>Typical use</th>
-                <th>Common sizing / format</th>
-                <th>Protects from</th>
-                <th>Design notes</th>
+                <th>Key design issue</th>
+                <th>Arcovra design approach</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td><strong>Bird net</strong></td>
-                <td>General orchard bird and bat exclusion</td>
-                <td>Often 12–20mm mesh; quad, diamond or hex patterns</td>
-                <td>Birds, bats, some wind/sun reduction</td>
-                <td>Good airflow. Suitable for wider post spacing. Must be wildlife-safe and properly tensioned.</td>
+                <td>Bird and bat exclusion</td>
+                <td>Cherries, berries, apples, pears, grapes and stone fruit</td>
+                <td>Wildlife safety, airflow, access and seasonal labour</td>
+                <td>Wide-span or modular systems designed around faster handling and practical orchard access.</td>
               </tr>
+
               <tr>
                 <td><strong>Hail net</strong></td>
-                <td>Apples, pears, stone fruit, cherries and citrus</td>
-                <td>UV-stabilised HDPE netting, selected by hail risk and light requirement</td>
-                <td>Hail, birds, sunburn and wind rub</td>
-                <td>Needs stronger support than simple bird netting. Colour affects light, fruit colour and microclimate.</td>
+                <td>Impact protection</td>
+                <td>Apples, pears, cherries, citrus and stone fruit</td>
+                <td>Higher structural loading and light-management trade-offs</td>
+                <td>Stronger net/support combinations where hail risk justifies the cost and structure.</td>
               </tr>
+
               <tr>
                 <td><strong>Insect net</strong></td>
-                <td>Fruit fly, moth, bug or bee exclusion</td>
-                <td>Small mesh selected to target pest size</td>
-                <td>Fruit fly, moths, bugs, beetles and other pests</td>
-                <td>Tighter mesh can reduce airflow and increase humidity. Sealed joins are critical.</td>
+                <td>Pest exclusion</td>
+                <td>Fruit fly, moth, bug or beetle pressure</td>
+                <td>Fine mesh reduces airflow and increases sealing requirements</td>
+                <td>Used selectively where pest pressure justifies tighter mesh and more detailed edge control.</td>
               </tr>
+
               <tr>
                 <td><strong>Shade net</strong></td>
-                <td>Hot inland fruit regions</td>
-                <td>Shade percentage selected by crop and region</td>
-                <td>Sunburn, heat stress and some wind</td>
-                <td>Too much shade can reduce colour development or delay maturity.</td>
+                <td>Sunburn and heat reduction</td>
+                <td>Hot regions and exposed blocks</td>
+                <td>Too much shade can affect colour, maturity and crop response</td>
+                <td>Selected carefully by crop and region, not applied as a one-size-fits-all cover.</td>
               </tr>
+
               <tr>
                 <td><strong>Rain cover film</strong></td>
+                <td>Rain cracking and wet harvest protection</td>
                 <td>Cherries, berries, grapes and premium fruit</td>
-                <td>Clear UV anti-drip film or reinforced rain-cover film</td>
-                <td>Rain cracking, rainfall, wet harvest conditions</td>
-                <td>Acts like a sail. Needs smaller bays, strong hold-downs and operating rules.</td>
-              </tr>
-              <tr>
-                <td><strong>Drape net</strong></td>
-                <td>Single-row orchard or vineyard protection</td>
-                <td>Net draped over row/canopy</td>
-                <td>Birds, sunburn, some hail and some insects</td>
-                <td>Lower structure cost but more crop contact and manual handling.</td>
+                <td>Acts like a sail and needs smaller bays or controlled release</td>
+                <td>Approached as a specific rain-cover option, not simply added to a bird-net structure.</td>
               </tr>
             </tbody>
           </table>
@@ -999,9 +1166,9 @@
       <div class="container">
         <div class="section-head">
           <div class="mini">Protection matrix</div>
-          <h2>Best system by risk.</h2>
+          <h2>What are you protecting against?</h2>
           <p>
-            Each threat needs a different balance of airflow, strength, light transmission, sealing and seasonal operation.
+            The best system depends on the main risk. A cherry block exposed to rain cracking does not need the same structure as a citrus block fighting wind rub or an apple orchard needing hail protection.
           </p>
         </div>
 
@@ -1009,37 +1176,37 @@
           <article class="card">
             <div class="card-icon">🐦</div>
             <h3>Birds & bats</h3>
-            <p>Use bird-safe exclusion netting. Best suited to permanent canopy, modular bay, or single-row drape systems.</p>
+            <p>Best handled with exclusion netting that is installed, tensioned and maintained properly. Seasonal operation is often the biggest labour issue.</p>
           </article>
 
           <article class="card">
             <div class="card-icon">🧊</div>
             <h3>Hail</h3>
-            <p>Use hail-rated HDPE net and stronger support. Relevant to apples, pears, cherries, stone fruit and citrus.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">☀️</div>
-            <h3>Sunburn & heat</h3>
-            <p>Use shade-rated or coloured nets carefully. Good for hot areas, but shading must not harm fruit colour or maturity.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">💨</div>
-            <h3>Wind</h3>
-            <p>Use perimeter protection, windbreak mesh and balanced cable layouts. Wind load drives post and screw sizing.</p>
+            <p>Requires stronger cover selection and support design. Hail protection is usually a higher-cost system but can protect an entire season’s crop value.</p>
           </article>
 
           <article class="card">
             <div class="card-icon">🐛</div>
             <h3>Insects</h3>
-            <p>Use smaller mesh and sealed edges. Useful for fruit fly, moths and other crop-specific pest pressure.</p>
+            <p>Fine mesh can help exclude pests, but it must be balanced with airflow, pollination, heat and access requirements.</p>
           </article>
 
           <article class="card">
             <div class="card-icon">🌧</div>
-            <h3>Rain & cracking</h3>
-            <p>Use rain covers for cherries, berries and grapes. Smaller bays are safer than giant continuous film spans.</p>
+            <h3>Rain</h3>
+            <p>Rain covers are especially relevant to cherries and other premium crops, but they introduce higher wind loads and need smaller, controlled sections.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">☀️</div>
+            <h3>Sunburn & heat</h3>
+            <p>Shade can reduce fruit damage and stress, but the shade percentage and colour need to be matched to the crop and climate.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">💨</div>
+            <h3>Wind</h3>
+            <p>Wind affects structure loads, net movement, fruit rub and anchor design. It should be part of the layout from the beginning.</p>
           </article>
         </div>
       </div>
@@ -1048,49 +1215,49 @@
     <section id="crops" class="dark">
       <div class="container">
         <div class="section-head">
-          <div class="mini">Crop-specific design</div>
-          <h2>Different fruit. Different protection priorities.</h2>
+          <div class="mini">Crops</div>
+          <h2>Fruit-specific protection priorities.</h2>
           <p>
-            Australia’s fruit regions vary from cool Tasmanian cherries to hot inland citrus and table grapes. The system should be matched to crop and local risk.
+            Arcovra is initially focused on orchard and fruit protection systems. Each crop has different risks, economics and handling requirements.
           </p>
         </div>
 
         <div class="grid-3">
           <article class="card">
             <h3>Cherries</h3>
-            <p>High-value crop with strong need for bird, rain cracking, hail and wind protection. Rain cover and seasonal net operation can be major value drivers.</p>
+            <p>High-value crop with strong bird pressure, rain cracking risk, hail exposure and seasonal labour demand. A good first market for pilot systems.</p>
           </article>
 
           <article class="card">
             <h3>Apples & pears</h3>
-            <p>Often suited to bird/hail net systems. Priorities include hail, birds, flying foxes, sunburn and packout improvement.</p>
+            <p>Often suited to bird and hail systems. Main drivers can include hail damage, sunburn, birds, flying foxes and packout improvement.</p>
           </article>
 
           <article class="card">
             <h3>Citrus</h3>
-            <p>Protection can target hail, wind rub, sunburn, birds, bats and sometimes bee exclusion for seedless varieties.</p>
+            <p>Protection can focus on hail, wind rub, sunburn, birds and bats. Windbreak and perimeter protection can be just as important as overhead cover.</p>
           </article>
 
           <article class="card">
             <h3>Berries</h3>
-            <p>Bird pressure, hail, sun, rain and microclimate management are key. Tunnel-style or modular bay systems may suit some blocks.</p>
+            <p>Bird pressure, hail, heat, rain and microclimate management matter. Smaller modular systems may be more suitable than large-span orchard layouts.</p>
           </article>
 
           <article class="card">
             <h3>Stone fruit</h3>
-            <p>Peaches, nectarines, apricots and plums need protection from hail, birds, sunburn and rain-related quality loss.</p>
+            <p>Peaches, nectarines, apricots and plums may need protection from birds, hail, sunburn and rain-related quality loss.</p>
           </article>
 
           <article class="card">
             <h3>Table grapes</h3>
-            <p>Protection can target birds, sunburn, hail, rain splitting and bunch quality. Drape and side-net systems may suit vineyards.</p>
+            <p>Protection can target birds, sunburn, hail, rain splitting and bunch quality. Vineyard layouts may need a different format from orchard rows.</p>
           </article>
         </div>
 
         <div class="crop-strip">
-          <div class="crop-pill"><span class="dot orange"></span>Citrus</div>
           <div class="crop-pill"><span class="dot cherry"></span>Cherries</div>
           <div class="crop-pill"><span class="dot apple"></span>Apples</div>
+          <div class="crop-pill"><span class="dot orange"></span>Citrus</div>
           <div class="crop-pill"><span class="dot berry"></span>Berries</div>
           <div class="crop-pill"><span class="dot stone"></span>Stone fruit</div>
           <div class="crop-pill"><span class="dot grape"></span>Grapes</div>
@@ -1101,39 +1268,46 @@
     <section id="process">
       <div class="container grid-2">
         <div class="section-head">
-          <div class="mini">Turnkey process</div>
-          <h2>From concept to installed and operational.</h2>
+          <div class="mini">Turnkey pathway</div>
+          <h2>From site review to practical installation.</h2>
           <p>
-            Verdasheild is planned as a full turnkey system: site review, layout, engineering, supply, install and operating handover. Early projects should be treated as pilot installations while the system is refined.
+            The business model is intended to be full turnkey: concept layout, supply, installation management and handover. Early jobs should stay small enough to measure, refine and improve.
           </p>
+
+          <div class="image-slot" style="margin-top: 24px; min-height: 260px;">
+            <span>Image placeholder: installation process</span>
+            <p>
+              Replace with a real installation photo later: posts, screw piles, cable setup, netting operation or a pilot orchard bay.
+            </p>
+          </div>
         </div>
 
         <div class="process">
           <div class="step">
             <div>
               <h3>Site assessment</h3>
-              <p>Review crop type, hectares, row spacing, wind exposure, soil, machinery access and protection goals.</p>
+              <p>Review crop type, hectares, row spacing, wind exposure, soil, machinery access and existing netting problems.</p>
             </div>
           </div>
 
           <div class="step">
             <div>
               <h3>System selection</h3>
-              <p>Choose bird net, hail net, rain cover, insect exclusion, shade or a combined system.</p>
+              <p>Select the likely cover type: bird net, hail net, insect net, weather cover, or a staged combination.</p>
             </div>
           </div>
 
           <div class="step">
             <div>
-              <h3>Engineering and layout</h3>
-              <p>Confirm post spacing, cable layout, screw/pile selection, bracing and operating limits.</p>
+              <h3>Layout and review</h3>
+              <p>Confirm proposed spacing, post arrangement, cable paths, anchors, access, operating limits and pilot scope.</p>
             </div>
           </div>
 
           <div class="step">
             <div>
-              <h3>Install and handover</h3>
-              <p>Install the structure, tension the netting system, test operation and train the grower or farm team.</p>
+              <h3>Install and measure</h3>
+              <p>Install the pilot, measure labour, observe operation, record issues and improve the system before scaling.</p>
             </div>
           </div>
         </div>
@@ -1143,28 +1317,28 @@
     <section id="regions">
       <div class="container grid-2">
         <div class="image-slot">
-          <span>Future image slot</span>
+          <span>Image placeholder: Australian orchard regions</span>
           <p>
-            Add a national orchard service image or collage here: Tasmania cherries, Goulburn Valley apples/pears, Sunraysia citrus/grapes, Riverina fruit, and Coffs Harbour berries.
+            Replace with a national fruit-region image or collage: Tasmania cherries, Goulburn Valley apples and pears, Sunraysia/Riverland citrus and grapes, Riverina fruit, Coffs Harbour berries.
           </p>
         </div>
 
         <div class="section-head">
-          <div class="mini">Australia-wide pathway</div>
-          <h2>Built to start locally, then serve national fruit regions.</h2>
+          <div class="mini">Australia-wide orchard focus</div>
+          <h2>Designed for Australian fruit regions, starting with pilot blocks.</h2>
           <p>
-            The first pilots can focus on Tasmania and cherries, then expand into mainland cherry regions, apple and pear districts, citrus, berries, stone fruit and grapes.
+            Arcovra should start with carefully selected pilot installations, then expand only after proving installation speed, seasonal operation, durability and grower value.
           </p>
 
           <div class="grid-2" style="grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 24px;">
             <div class="card">
-              <h3>Cool-climate fruit</h3>
-              <p>Tasmania, Adelaide Hills, Orange, Batlow, Young and Manjimup.</p>
+              <h3>Early pilot fit</h3>
+              <p>High-value fruit blocks where bird pressure, rain risk or seasonal labour costs justify better protection.</p>
             </div>
 
             <div class="card">
-              <h3>Irrigated fruit belts</h3>
-              <p>Goulburn Valley, Sunraysia, Murray Valley, Riverina and Riverland.</p>
+              <h3>Expansion fit</h3>
+              <p>Commercial orchards and fruit-growing regions where netting is already accepted but labour and maintenance remain problems.</p>
             </div>
           </div>
         </div>
@@ -1174,17 +1348,17 @@
     <section id="contact" class="contact">
       <div class="container contact-panel">
         <div>
-          <div class="mini">Pilot installations</div>
-          <h2>Let’s protect your next harvest.</h2>
+          <div class="mini">Pilot enquiry</div>
+          <h2>Interested in testing a better orchard protection system?</h2>
           <p>
-            This form currently opens an email draft from your device. Later, it can be connected to a proper website form service.
+            This form opens an email draft from your device. It can later be connected to a proper form service once the site is ready for broader enquiries.
           </p>
 
           <ul>
-            <li>Site assessment</li>
-            <li>Crop and threat review</li>
+            <li>Grower site assessment</li>
+            <li>Crop and protection-risk review</li>
             <li>Concept layout and estimate</li>
-            <li>Pilot installation proposal</li>
+            <li>Small pilot installation proposal</li>
           </ul>
         </div>
 
@@ -1210,7 +1384,7 @@
 
           <textarea id="message" placeholder="Tell us about your orchard, hectares, current netting setup and protection problem."></textarea>
 
-          <button class="btn btn-gold" type="submit">Request a pilot</button>
+          <button class="btn btn-gold" type="submit">Request pilot discussion</button>
         </form>
       </div>
     </section>
@@ -1218,8 +1392,8 @@
 
   <footer>
     <div class="container footer-row">
-      <div>© 2026 Verdasheild. Orchard Protection Systems.</div>
-      <div>Australia-wide crop protection systems for commercial fruit growers.</div>
+      <div>© 2026 Arcovra. Orchard Protection Systems.</div>
+      <div>Practical crop-cover systems for Australian fruit growers.</div>
     </div>
   </footer>
 
@@ -1233,7 +1407,7 @@
       const crop = document.getElementById("crop").value;
       const message = document.getElementById("message").value;
 
-      const subject = encodeURIComponent("Verdasheild pilot enquiry");
+      const subject = encodeURIComponent("Arcovra pilot enquiry");
       const body = encodeURIComponent(
         `Name: ${name}\nEmail: ${email}\nLocation: ${location}\nCrop: ${crop}\n\nMessage:\n${message}`
       );
