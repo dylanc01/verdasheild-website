@@ -3,53 +3,1243 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Verdasheild</title>
+  <title>Verdasheild | Orchard Protection Systems Australia</title>
+  <meta
+    name="description"
+    content="Verdasheild designs orchard netting, rain cover, hail protection and crop protection systems for Australian fruit growers."
+  />
+
   <style>
-    body {
+    :root {
+      --forest: #103d22;
+      --green: #1f6b3b;
+      --leaf: #70ad3d;
+      --gold: #bd8a17;
+      --cream: #f7f3e7;
+      --cream2: #fffdf7;
+      --charcoal: #202a25;
+      --muted: #66736b;
+      --line: #e3d9c1;
+      --white: #ffffff;
+      --black-post: #252c29;
+      --shadow: 0 22px 55px rgba(24, 43, 31, 0.13);
+      --radius: 28px;
+    }
+
+    * {
+      box-sizing: border-box;
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f7f4eb;
-      color: #123f24;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--cream);
+      color: var(--charcoal);
+      line-height: 1.55;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 36px));
+      margin: 0 auto;
+    }
+
+    .mini {
+      color: var(--gold);
+      font-weight: 800;
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 22px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 800;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-green {
+      background: var(--forest);
+      color: white;
+      box-shadow: 0 14px 28px rgba(16, 61, 34, 0.24);
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: white;
+      box-shadow: 0 14px 28px rgba(189, 138, 23, 0.25);
+    }
+
+    .btn-outline {
+      border-color: var(--line);
+      background: rgba(255, 255, 255, 0.72);
+      color: var(--forest);
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(247, 243, 231, 0.9);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(16, 61, 34, 0.08);
+    }
+
+    .nav {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--forest);
+      font-weight: 900;
+      letter-spacing: 0.07em;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
       display: grid;
       place-items: center;
-      min-height: 100vh;
+      background: var(--forest);
+      color: var(--gold);
+      font-weight: 900;
+      box-shadow: 0 10px 25px rgba(16, 61, 34, 0.18);
+    }
+
+    .brand small {
+      display: block;
+      letter-spacing: 0.22em;
+      font-size: 0.54rem;
+      font-weight: 800;
+      margin-top: -4px;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      color: var(--charcoal);
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .nav-links a:hover {
+      color: var(--green);
+    }
+
+    .hero {
+      padding: 58px 0 0;
+      background: linear-gradient(180deg, var(--cream2), var(--cream));
+      overflow: hidden;
+    }
+
+    .hero-copy {
+      max-width: 880px;
+      margin: 0 auto 30px;
       text-align: center;
     }
 
-    .card {
-      max-width: 760px;
-      padding: 60px 30px;
-    }
-
     h1 {
-      font-size: 64px;
-      margin-bottom: 12px;
-      color: #0b4f25;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3.1rem, 7vw, 6.2rem);
+      line-height: 0.94;
+      letter-spacing: -0.055em;
+      color: var(--forest);
+      margin: 14px 0 18px;
     }
 
-    p {
-      font-size: 22px;
-      color: #4f5c53;
-      line-height: 1.5;
+    .hero-copy p {
+      max-width: 720px;
+      margin: 0 auto 28px;
+      color: var(--muted);
+      font-size: 1.13rem;
     }
 
-    .button {
-      margin-top: 30px;
-      display: inline-block;
-      background: #bd8a17;
-      color: white;
-      padding: 14px 26px;
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-visual {
+      position: relative;
+      height: 430px;
+      margin-top: 34px;
+      overflow: hidden;
+      border-radius: 38px 38px 0 0;
+      box-shadow: var(--shadow);
+      background:
+        linear-gradient(180deg, #dfeadf 0%, #edf2e5 38%, #87a66c 39%, #244b29 100%);
+    }
+
+    .mountains {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(140deg, transparent 0 42%, rgba(42, 68, 80, 0.19) 43% 54%, transparent 55%),
+        linear-gradient(35deg, transparent 0 50%, rgba(42, 68, 80, 0.18) 51% 62%, transparent 63%);
+      opacity: 0.8;
+    }
+
+    .canopy {
+      position: absolute;
+      left: -7%;
+      right: -7%;
+      top: 52px;
+      height: 265px;
+      border-top: 3px solid rgba(189, 138, 23, 0.75);
+      border-radius: 50% 50% 0 0;
+      background: linear-gradient(180deg, rgba(255,255,255,0.72), rgba(255,255,255,0.16));
+      clip-path: polygon(0 33%, 50% 65%, 100% 33%, 100% 100%, 0 100%);
+    }
+
+    .canopy::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(25deg, transparent 48%, rgba(255,255,255,0.55) 49%, rgba(255,255,255,0.55) 51%, transparent 52%),
+        linear-gradient(-25deg, transparent 48%, rgba(255,255,255,0.42) 49%, rgba(255,255,255,0.42) 51%, transparent 52%);
+      background-size: 55px 55px;
+      opacity: 0.48;
+    }
+
+    .rows {
+      position: absolute;
+      inset: 170px 0 0;
+      background:
+        repeating-linear-gradient(100deg, rgba(255,255,255,0.14) 0 2px, transparent 2px 62px),
+        repeating-linear-gradient(80deg, rgba(255,255,255,0.14) 0 2px, transparent 2px 62px);
+    }
+
+    .post {
+      position: absolute;
+      bottom: 0;
+      width: 10px;
+      height: 245px;
+      background: var(--black-post);
+      border-radius: 8px 8px 0 0;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+    }
+
+    .p1 { left: 12%; height: 260px; }
+    .p2 { left: 30%; height: 220px; }
+    .p3 { left: 50%; height: 205px; }
+    .p4 { right: 30%; height: 220px; }
+    .p5 { right: 12%; height: 260px; }
+
+    .fruit-stack {
+      position: absolute;
+      right: 7%;
+      top: 32px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .fruit-bubble {
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: white;
+      border: 1px solid rgba(227, 217, 193, 0.7);
+      box-shadow: 0 14px 34px rgba(33, 43, 39, 0.15);
+      font-size: 31px;
+    }
+
+    .badge {
+      position: absolute;
+      left: 7%;
+      top: 74px;
+      width: 116px;
+      height: 116px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.86);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      display: grid;
+      place-items: center;
+      color: var(--forest);
+      font-weight: 900;
+      text-align: center;
+      line-height: 1.05;
+    }
+
+    .feature-bar {
+      transform: translateY(-34px);
+      position: relative;
+      z-index: 4;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: rgba(255,255,255,0.95);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .feature {
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      border-right: 1px solid var(--line);
+    }
+
+    .feature:last-child {
+      border-right: 0;
+    }
+
+    .feature-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 14px;
+      background: rgba(31,107,59,0.1);
+      display: grid;
+      place-items: center;
+      color: var(--forest);
+      font-weight: 900;
+    }
+
+    .feature strong {
+      display: block;
+      color: var(--forest);
+      line-height: 1.1;
+    }
+
+    .feature span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-top: 4px;
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.2rem, 4vw, 4rem);
+      line-height: 1;
+      letter-spacing: -0.04em;
+      color: var(--charcoal);
+      margin: 10px 0 18px;
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 34px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.78);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: 0 14px 34px rgba(33, 43, 39, 0.06);
+    }
+
+    .card h3 {
+      color: var(--forest);
+      font-size: 1.18rem;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .card p,
+    .card li {
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .card ul {
+      display: grid;
+      gap: 6px;
+      padding-left: 18px;
+      margin-top: 10px;
+    }
+
+    .card-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 18px;
+      background: rgba(31,107,59,0.1);
+      display: grid;
+      place-items: center;
+      margin-bottom: 16px;
+      font-size: 1.4rem;
+    }
+
+    .image-slot {
+      min-height: 360px;
+      border-radius: 32px;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.25), rgba(31,107,59,0.18)),
+        repeating-linear-gradient(86deg, transparent 0 48px, rgba(16,61,34,0.15) 49px 51px, transparent 52px 96px),
+        linear-gradient(180deg, #dfe9d7, #93b06f 45%, #294f2e);
+      border: 1px solid rgba(16,61,34,0.16);
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .image-slot span {
+      width: fit-content;
+      max-width: 100%;
+      padding: 10px 14px;
       border-radius: 999px;
-      text-decoration: none;
-      font-weight: bold;
+      background: rgba(16,61,34,0.9);
+      color: white;
+      font-weight: 800;
+      font-size: 0.88rem;
+    }
+
+    .image-slot p {
+      margin-top: 10px;
+      max-width: 520px;
+      background: rgba(255,255,255,0.78);
+      color: #284235;
+      border-radius: 16px;
+      padding: 12px 14px;
+      font-size: 0.92rem;
+    }
+
+    .dark {
+      background: var(--forest);
+      color: white;
+    }
+
+    .dark h2,
+    .dark h3 {
+      color: white;
+    }
+
+    .dark p,
+    .dark li {
+      color: rgba(255,255,255,0.76);
+    }
+
+    .dark .mini {
+      color: #e6ce86;
+    }
+
+    .dark .card {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.14);
+      box-shadow: none;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border-radius: 24px;
+      border: 1px solid var(--line);
+      background: white;
+    }
+
+    table {
+      width: 100%;
+      min-width: 860px;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 16px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--line);
+    }
+
+    th {
+      background: #fbf8ef;
+      color: var(--forest);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.78rem;
+    }
+
+    td {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    td strong {
+      color: var(--charcoal);
+    }
+
+    .crop-strip {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      overflow: hidden;
+      background: white;
+      margin-top: 26px;
+    }
+
+    .crop-pill {
+      padding: 18px 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border-right: 1px solid var(--line);
+      color: var(--forest);
+      font-weight: 850;
+    }
+
+    .crop-pill:last-child {
+      border-right: 0;
+    }
+
+    .dot {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .orange { background: #e88a1a; }
+    .cherry { background: #b8202f; }
+    .apple { background: #7ab648; }
+    .berry { background: #255fa8; }
+    .stone { background: #d66d3c; }
+    .grape { background: #7047a8; }
+
+    .process {
+      counter-reset: step;
+      display: grid;
+      gap: 14px;
+    }
+
+    .step {
+      counter-increment: step;
+      display: grid;
+      grid-template-columns: 70px 1fr;
+      gap: 20px;
+      align-items: start;
+      padding: 24px;
+      background: rgba(255,255,255,0.78);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+    }
+
+    .step::before {
+      content: counter(step, decimal-leading-zero);
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      background: var(--forest);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+    }
+
+    .step h3 {
+      color: var(--forest);
+      margin-bottom: 4px;
+    }
+
+    .step p {
+      color: var(--muted);
+    }
+
+    .contact {
+      padding: 60px 0 80px;
+    }
+
+    .contact-panel {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 30px;
+      background: var(--forest);
+      color: white;
+      border-radius: 36px;
+      padding: 38px;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-panel h2 {
+      color: white;
+    }
+
+    .contact-panel p,
+    .contact-panel li {
+      color: rgba(255,255,255,0.76);
+    }
+
+    .contact-panel ul {
+      padding-left: 20px;
+      display: grid;
+      gap: 8px;
+      margin-top: 22px;
+    }
+
+    form {
+      display: grid;
+      gap: 12px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.08);
+      color: white;
+      border-radius: 14px;
+      padding: 13px 14px;
+      font: inherit;
+      outline: none;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: rgba(255,255,255,0.62);
+    }
+
+    select {
+      color: rgba(255,255,255,0.82);
+    }
+
+    option {
+      color: var(--charcoal);
+    }
+
+    textarea {
+      min-height: 118px;
+      resize: vertical;
+    }
+
+    footer {
+      padding: 36px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 980px) {
+      .nav-links {
+        display: none;
+      }
+
+      .features,
+      .grid-2,
+      .grid-3,
+      .contact-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .feature {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .feature:last-child {
+        border-bottom: 0;
+      }
+
+      .fruit-stack {
+        display: none;
+      }
+
+      .crop-strip {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 580px) {
+      .container {
+        width: min(100% - 26px, 1180px);
+      }
+
+      .brand {
+        letter-spacing: 0.04em;
+        font-size: 0.86rem;
+      }
+
+      .brand-mark {
+        width: 36px;
+        height: 36px;
+      }
+
+      .nav {
+        height: 68px;
+      }
+
+      .hero {
+        padding-top: 42px;
+      }
+
+      .hero-visual {
+        height: 330px;
+        border-radius: 28px 28px 0 0;
+      }
+
+      .badge {
+        width: 82px;
+        height: 82px;
+        font-size: 0.78rem;
+        left: 5%;
+      }
+
+      .hero-actions,
+      .form-grid {
+        grid-template-columns: 1fr;
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .contact-panel {
+        padding: 26px;
+      }
+
+      .step {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
+
 <body>
-  <div class="card">
-    <h1>Verdasheild</h1>
-    <p>Commercial orchard protection systems for Australian fruit growers.</p>
-    <a class="button" href="#">Website coming soon</a>
-  </div>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Verdasheild home">
+        <div class="brand-mark">V</div>
+        <div>
+          VERDASHEILD
+          <small>ORCHARD PROTECTION SYSTEMS</small>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#systems">Systems</a>
+        <a href="#netting">Netting Guide</a>
+        <a href="#protection">Protection</a>
+        <a href="#crops">Crops</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a class="btn btn-gold" href="#contact">Book a pilot</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-copy">
+          <div class="mini">Smart protection. Stronger orchards.</div>
+          <h1>Commercial orchard protection systems for Australian growers.</h1>
+          <p>
+            Verdasheild designs orchard netting, rain cover, hail protection and crop-cover systems for fruit growers who need better protection with less seasonal labour.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-green" href="#contact">Request a pilot</a>
+            <a class="btn btn-outline" href="#systems">Explore systems</a>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="Commercial orchard netting illustration with grey-black posts">
+          <div class="mountains"></div>
+          <div class="canopy"></div>
+          <div class="rows"></div>
+          <div class="post p1"></div>
+          <div class="post p2"></div>
+          <div class="post p3"></div>
+          <div class="post p4"></div>
+          <div class="post p5"></div>
+
+          <div class="badge">CROP<br />SHIELD</div>
+
+          <div class="fruit-stack">
+            <div class="fruit-bubble">🍊</div>
+            <div class="fruit-bubble">🍒</div>
+            <div class="fruit-bubble">🍏</div>
+            <div class="fruit-bubble">🫐</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="feature-bar">
+      <div class="container features">
+        <div class="feature">
+          <div class="feature-icon">🛡</div>
+          <div>
+            <strong>Protect yield</strong>
+            <span>Bird, hail, sun, wind and rain systems</span>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">⏱</div>
+          <div>
+            <strong>Reduce labour</strong>
+            <span>Built around simpler seasonal operation</span>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🌿</div>
+          <div>
+            <strong>Improve fruit quality</strong>
+            <span>Crop-specific protection choices</span>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">↗</div>
+          <div>
+            <strong>Commercial scale</strong>
+            <span>Designed for Australian fruit regions</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section id="systems">
+      <div class="container grid-2">
+        <div class="section-head">
+          <div class="mini">System architecture</div>
+          <h2>Not one net. The right structure for the threat.</h2>
+          <p>
+            Bird netting, hail protection, rain film, insect exclusion and shade all behave differently. The right design depends on the crop, wind exposure, soil, region and the grower’s operating budget.
+          </p>
+        </div>
+
+        <div class="image-slot">
+          <span>Future image slot</span>
+          <p>
+            Add a real or AI-generated image of a commercial orchard canopy here: long orchard rows, wide-span netting, and grey or black posts to represent fibreglass supports.
+          </p>
+        </div>
+      </div>
+
+      <div class="container grid-3" style="margin-top: 26px;">
+        <article class="card">
+          <div class="card-icon">🐦</div>
+          <h3>Bird Net System</h3>
+          <p>For cherries, berries, apples, pears, stone fruit, grapes and citrus where bird or bat pressure affects marketable yield.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">🧊</div>
+          <h3>Hail Net System</h3>
+          <p>Stronger netting and support structures for areas where hail events can damage fruit, leaves and branches.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">🌧</div>
+          <h3>Rain Cover System</h3>
+          <p>Clear roof film or rain covers for cherries, berries, grapes and premium fruit where rain cracking or wet harvest conditions are a risk.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">🐛</div>
+          <h3>Insect Exclusion</h3>
+          <p>Fine mesh systems for pests such as fruit fly, moths, beetles and other insects where sealed edges and access points matter.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">☀️</div>
+          <h3>Shade & Sunburn</h3>
+          <p>Shade-rated nets for hot regions where sunburn, heat stress and fruit quality losses are a major issue.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">💨</div>
+          <h3>Wind Protection</h3>
+          <p>Perimeter netting, windbreak mesh and structure layouts designed to reduce wind rub, canopy damage and fruit marking.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="netting" class="dark">
+      <div class="container">
+        <div class="section-head">
+          <div class="mini">Netting guide</div>
+          <h2>Core cover types and where they fit.</h2>
+          <p>
+            The tighter or more solid the cover, the higher the wind load. This is why bird netting can use wider spans, while rain film needs smaller bays, stronger hold-downs, or a release system.
+          </p>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Cover type</th>
+                <th>Typical use</th>
+                <th>Common sizing / format</th>
+                <th>Protects from</th>
+                <th>Design notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Bird net</strong></td>
+                <td>General orchard bird and bat exclusion</td>
+                <td>Often 12–20mm mesh; quad, diamond or hex patterns</td>
+                <td>Birds, bats, some wind/sun reduction</td>
+                <td>Good airflow. Suitable for wider post spacing. Must be wildlife-safe and properly tensioned.</td>
+              </tr>
+              <tr>
+                <td><strong>Hail net</strong></td>
+                <td>Apples, pears, stone fruit, cherries and citrus</td>
+                <td>UV-stabilised HDPE netting, selected by hail risk and light requirement</td>
+                <td>Hail, birds, sunburn and wind rub</td>
+                <td>Needs stronger support than simple bird netting. Colour affects light, fruit colour and microclimate.</td>
+              </tr>
+              <tr>
+                <td><strong>Insect net</strong></td>
+                <td>Fruit fly, moth, bug or bee exclusion</td>
+                <td>Small mesh selected to target pest size</td>
+                <td>Fruit fly, moths, bugs, beetles and other pests</td>
+                <td>Tighter mesh can reduce airflow and increase humidity. Sealed joins are critical.</td>
+              </tr>
+              <tr>
+                <td><strong>Shade net</strong></td>
+                <td>Hot inland fruit regions</td>
+                <td>Shade percentage selected by crop and region</td>
+                <td>Sunburn, heat stress and some wind</td>
+                <td>Too much shade can reduce colour development or delay maturity.</td>
+              </tr>
+              <tr>
+                <td><strong>Rain cover film</strong></td>
+                <td>Cherries, berries, grapes and premium fruit</td>
+                <td>Clear UV anti-drip film or reinforced rain-cover film</td>
+                <td>Rain cracking, rainfall, wet harvest conditions</td>
+                <td>Acts like a sail. Needs smaller bays, strong hold-downs and operating rules.</td>
+              </tr>
+              <tr>
+                <td><strong>Drape net</strong></td>
+                <td>Single-row orchard or vineyard protection</td>
+                <td>Net draped over row/canopy</td>
+                <td>Birds, sunburn, some hail and some insects</td>
+                <td>Lower structure cost but more crop contact and manual handling.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="protection">
+      <div class="container">
+        <div class="section-head">
+          <div class="mini">Protection matrix</div>
+          <h2>Best system by risk.</h2>
+          <p>
+            Each threat needs a different balance of airflow, strength, light transmission, sealing and seasonal operation.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="card-icon">🐦</div>
+            <h3>Birds & bats</h3>
+            <p>Use bird-safe exclusion netting. Best suited to permanent canopy, modular bay, or single-row drape systems.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🧊</div>
+            <h3>Hail</h3>
+            <p>Use hail-rated HDPE net and stronger support. Relevant to apples, pears, cherries, stone fruit and citrus.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">☀️</div>
+            <h3>Sunburn & heat</h3>
+            <p>Use shade-rated or coloured nets carefully. Good for hot areas, but shading must not harm fruit colour or maturity.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">💨</div>
+            <h3>Wind</h3>
+            <p>Use perimeter protection, windbreak mesh and balanced cable layouts. Wind load drives post and screw sizing.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🐛</div>
+            <h3>Insects</h3>
+            <p>Use smaller mesh and sealed edges. Useful for fruit fly, moths and other crop-specific pest pressure.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🌧</div>
+            <h3>Rain & cracking</h3>
+            <p>Use rain covers for cherries, berries and grapes. Smaller bays are safer than giant continuous film spans.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="crops" class="dark">
+      <div class="container">
+        <div class="section-head">
+          <div class="mini">Crop-specific design</div>
+          <h2>Different fruit. Different protection priorities.</h2>
+          <p>
+            Australia’s fruit regions vary from cool Tasmanian cherries to hot inland citrus and table grapes. The system should be matched to crop and local risk.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <h3>Cherries</h3>
+            <p>High-value crop with strong need for bird, rain cracking, hail and wind protection. Rain cover and seasonal net operation can be major value drivers.</p>
+          </article>
+
+          <article class="card">
+            <h3>Apples & pears</h3>
+            <p>Often suited to bird/hail net systems. Priorities include hail, birds, flying foxes, sunburn and packout improvement.</p>
+          </article>
+
+          <article class="card">
+            <h3>Citrus</h3>
+            <p>Protection can target hail, wind rub, sunburn, birds, bats and sometimes bee exclusion for seedless varieties.</p>
+          </article>
+
+          <article class="card">
+            <h3>Berries</h3>
+            <p>Bird pressure, hail, sun, rain and microclimate management are key. Tunnel-style or modular bay systems may suit some blocks.</p>
+          </article>
+
+          <article class="card">
+            <h3>Stone fruit</h3>
+            <p>Peaches, nectarines, apricots and plums need protection from hail, birds, sunburn and rain-related quality loss.</p>
+          </article>
+
+          <article class="card">
+            <h3>Table grapes</h3>
+            <p>Protection can target birds, sunburn, hail, rain splitting and bunch quality. Drape and side-net systems may suit vineyards.</p>
+          </article>
+        </div>
+
+        <div class="crop-strip">
+          <div class="crop-pill"><span class="dot orange"></span>Citrus</div>
+          <div class="crop-pill"><span class="dot cherry"></span>Cherries</div>
+          <div class="crop-pill"><span class="dot apple"></span>Apples</div>
+          <div class="crop-pill"><span class="dot berry"></span>Berries</div>
+          <div class="crop-pill"><span class="dot stone"></span>Stone fruit</div>
+          <div class="crop-pill"><span class="dot grape"></span>Grapes</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="container grid-2">
+        <div class="section-head">
+          <div class="mini">Turnkey process</div>
+          <h2>From concept to installed and operational.</h2>
+          <p>
+            Verdasheild is planned as a full turnkey system: site review, layout, engineering, supply, install and operating handover. Early projects should be treated as pilot installations while the system is refined.
+          </p>
+        </div>
+
+        <div class="process">
+          <div class="step">
+            <div>
+              <h3>Site assessment</h3>
+              <p>Review crop type, hectares, row spacing, wind exposure, soil, machinery access and protection goals.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div>
+              <h3>System selection</h3>
+              <p>Choose bird net, hail net, rain cover, insect exclusion, shade or a combined system.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div>
+              <h3>Engineering and layout</h3>
+              <p>Confirm post spacing, cable layout, screw/pile selection, bracing and operating limits.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div>
+              <h3>Install and handover</h3>
+              <p>Install the structure, tension the netting system, test operation and train the grower or farm team.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="regions">
+      <div class="container grid-2">
+        <div class="image-slot">
+          <span>Future image slot</span>
+          <p>
+            Add a national orchard service image or collage here: Tasmania cherries, Goulburn Valley apples/pears, Sunraysia citrus/grapes, Riverina fruit, and Coffs Harbour berries.
+          </p>
+        </div>
+
+        <div class="section-head">
+          <div class="mini">Australia-wide pathway</div>
+          <h2>Built to start locally, then serve national fruit regions.</h2>
+          <p>
+            The first pilots can focus on Tasmania and cherries, then expand into mainland cherry regions, apple and pear districts, citrus, berries, stone fruit and grapes.
+          </p>
+
+          <div class="grid-2" style="grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 24px;">
+            <div class="card">
+              <h3>Cool-climate fruit</h3>
+              <p>Tasmania, Adelaide Hills, Orange, Batlow, Young and Manjimup.</p>
+            </div>
+
+            <div class="card">
+              <h3>Irrigated fruit belts</h3>
+              <p>Goulburn Valley, Sunraysia, Murray Valley, Riverina and Riverland.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container contact-panel">
+        <div>
+          <div class="mini">Pilot installations</div>
+          <h2>Let’s protect your next harvest.</h2>
+          <p>
+            This form currently opens an email draft from your device. Later, it can be connected to a proper website form service.
+          </p>
+
+          <ul>
+            <li>Site assessment</li>
+            <li>Crop and threat review</li>
+            <li>Concept layout and estimate</li>
+            <li>Pilot installation proposal</li>
+          </ul>
+        </div>
+
+        <form id="contactForm">
+          <div class="form-grid">
+            <input id="name" placeholder="Full name" required />
+            <input id="email" type="email" placeholder="Email address" required />
+          </div>
+
+          <div class="form-grid">
+            <input id="location" placeholder="Orchard location" />
+            <select id="crop">
+              <option value="">Crop type</option>
+              <option>Cherries</option>
+              <option>Apples / pears</option>
+              <option>Citrus</option>
+              <option>Berries</option>
+              <option>Stone fruit</option>
+              <option>Table grapes</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <textarea id="message" placeholder="Tell us about your orchard, hectares, current netting setup and protection problem."></textarea>
+
+          <button class="btn btn-gold" type="submit">Request a pilot</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <div>© 2026 Verdasheild. Orchard Protection Systems.</div>
+      <div>Australia-wide crop protection systems for commercial fruit growers.</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const location = document.getElementById("location").value;
+      const crop = document.getElementById("crop").value;
+      const message = document.getElementById("message").value;
+
+      const subject = encodeURIComponent("Verdasheild pilot enquiry");
+      const body = encodeURIComponent(
+        `Name: ${name}\nEmail: ${email}\nLocation: ${location}\nCrop: ${crop}\n\nMessage:\n${message}`
+      );
+
+      window.location.href = `mailto:dylanjoelchristian2001@gmail.com?subject=${subject}&body=${body}`;
+    });
+  </script>
 </body>
 </html>
